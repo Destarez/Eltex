@@ -37,7 +37,7 @@ void ClearNewline(char *str) {
 person people[MAX_PEOPLE];
 int peopleCount=0;
 
-void AddPerson()
+void AddPerson(person human)
 {
     if (peopleCount >= MAX_PEOPLE)
     {
@@ -45,47 +45,8 @@ void AddPerson()
         return;
     }
 
-    people[peopleCount].id = peopleCount + 1;
-
-    printf("-----------------------------------\n");
-
-    printf("Enter surname: ");
-    fgets(people[peopleCount].surname, MAX_CHAR_LENGHT, stdin);
-    ClearNewline(people[peopleCount].surname);
-
-    printf("Enter name: ");
-    fgets(people[peopleCount].name, MAX_CHAR_LENGHT, stdin);
-    ClearNewline(people[peopleCount].name);
-
-
-    printf("Enter patronymic: ");
-    fgets(people[peopleCount].patronymic, MAX_CHAR_LENGHT, stdin);
-    ClearNewline(people[peopleCount].patronymic);
-
-    printf("Enter email: ");
-    fgets(people[peopleCount].email, MAX_CHAR_LENGHT, stdin);
-    ClearNewline(people[peopleCount].email);
-
-    printf("Enter workplace: ");
-    fgets(people[peopleCount].occupation.workplace, MAX_CHAR_LENGHT, stdin);
-    ClearNewline(people[peopleCount].occupation.workplace);
-
-    printf("Enter post: ");
-    fgets(people[peopleCount].occupation.post, MAX_CHAR_LENGHT, stdin);
-    ClearNewline(people[peopleCount].occupation.post);
-
-    printf("Enter personal phone number: ");
-    fgets(people[peopleCount].phoneNumber.personalPhone, MAX_CHAR_LENGHT, stdin);
-    ClearNewline(people[peopleCount].phoneNumber.personalPhone);
-
-    printf("Enter work phone number: ");
-    fgets(people[peopleCount].phoneNumber.workPhone, MAX_CHAR_LENGHT, stdin);
-    ClearNewline(people[peopleCount].phoneNumber.workPhone);
-
-    printf("Enter link to account in social media: ");
-    fgets(people[peopleCount].socialMedia, MAX_CHAR_LENGHT, stdin);
-    ClearNewline(people[peopleCount].socialMedia);
-
+    human.id = peopleCount + 1;
+    people[peopleCount] = human;
     peopleCount++;
 
     printf("-----------------------------------\n");
@@ -111,14 +72,8 @@ void PeopleList()
     }
 }
 
-void EditPerson()
+void EditPerson(char Surname[MAX_CHAR_LENGHT], char Name[MAX_CHAR_LENGHT])
 {
-    char Name[MAX_CHAR_LENGHT], Surname[MAX_CHAR_LENGHT];
-    printf("-----------------------------------\n");
-    printf("Enter Surname and Name\n");
-    scanf("%s %s", Surname, Name);
-    printf("-----------------------------------\n");
-    getchar();
     int found=0;
 
     for( int i=0;i<peopleCount;i++)
@@ -137,7 +92,6 @@ void EditPerson()
             if (input[0]!='\0')
             {
                 strncpy(people[i].patronymic, input, MAX_CHAR_LENGHT);
-                ClearNewline(people[i].patronymic);
             }
 
             printf("Enter email: ");
@@ -147,7 +101,6 @@ void EditPerson()
             if (input[0]!='\0')
             {
                 strncpy(people[i].email, input, MAX_CHAR_LENGHT);
-                ClearNewline(people[i].email);
             }
             
             printf("Enter workplace: ");
@@ -157,7 +110,6 @@ void EditPerson()
             if (input[0]!='\0')
             {
                 strncpy(people[i].occupation.workplace, input, MAX_CHAR_LENGHT);
-                ClearNewline(people[i].occupation.workplace);
             }
 
             printf("Enter post: ");
@@ -167,7 +119,6 @@ void EditPerson()
             if (input[0]!='\0')
             {
                 strncpy(people[i].occupation.post, input, MAX_CHAR_LENGHT);
-                ClearNewline(people[i].occupation.post);
             }
 
             printf("Enter personal phone: ");
@@ -177,7 +128,6 @@ void EditPerson()
             if (input[0]!='\0')
             {
                 strncpy(people[i].phoneNumber.personalPhone, input, MAX_CHAR_LENGHT);
-                ClearNewline(people[i].phoneNumber.personalPhone);
             }
 
             printf("Enter work phone: ");
@@ -187,7 +137,6 @@ void EditPerson()
             if (input[0]!='\0')
             {
                 strncpy(people[i].phoneNumber.workPhone, input, MAX_CHAR_LENGHT);
-                ClearNewline(people[i].phoneNumber.workPhone);
             }
 
             printf("Enter social media: ");
@@ -197,20 +146,14 @@ void EditPerson()
             if (input[0]!='\0')
             {
                 strncpy(people[i].socialMedia, input, MAX_CHAR_LENGHT);
-                ClearNewline(people[i].socialMedia);
             }
         }
     }
     if (found==0) printf("Person not found\n");
 }
 
-void DeletePerson()
+void DeletePerson(char Surname[MAX_CHAR_LENGHT], char Name[MAX_CHAR_LENGHT])
 {
-    char Name[MAX_CHAR_LENGHT], Surname[MAX_CHAR_LENGHT];
-    printf("Enter Surname and Name\n");
-    scanf("%s %s", Surname, Name);
-    printf("-----------------------------------\n");
-    getchar();
     int found=0;
 
     for( int i=0;i<peopleCount;i++)
@@ -261,16 +204,81 @@ int main()
         switch(choice)
         {
             case 1:
-                AddPerson();
+                person human;
+                char input[MAX_CHAR_LENGHT];
+
+                printf("-----------------------------------\n");
+
+                printf("Enter surname: ");
+                fgets(input, MAX_CHAR_LENGHT, stdin);
+                ClearNewline(input);
+                strcpy(human.surname, input);
+
+                printf("Enter name: ");
+                fgets(input, MAX_CHAR_LENGHT, stdin);
+                ClearNewline(input);
+                strcpy(human.name, input);
+
+                printf("Enter patronymic: ");
+                fgets(input, MAX_CHAR_LENGHT, stdin);
+                ClearNewline(input);
+                strcpy(human.patronymic, input);
+
+                printf("Enter email: ");
+                fgets(input, MAX_CHAR_LENGHT, stdin);
+                ClearNewline(input);
+                strcpy(human.email, input);
+
+                printf("Enter workplace: ");
+                fgets(input, MAX_CHAR_LENGHT, stdin);
+                ClearNewline(input);
+                strcpy(human.occupation.workplace, input);
+
+                printf("Enter post: ");
+                fgets(input, MAX_CHAR_LENGHT, stdin);
+                ClearNewline(input);
+                strcpy(human.occupation.post, input);
+
+                printf("Enter personal phone number: ");
+                fgets(input, MAX_CHAR_LENGHT, stdin);
+                ClearNewline(input);
+                strcpy(human.phoneNumber.personalPhone, input);
+
+                printf("Enter work phone number: ");
+                fgets(input, MAX_CHAR_LENGHT, stdin);
+                ClearNewline(input);
+                strcpy(human.phoneNumber.workPhone, input);
+
+                printf("Enter link to account in social media: ");
+                fgets(input, MAX_CHAR_LENGHT, stdin);
+                ClearNewline(input);
+                strcpy(human.socialMedia, input);
+                
+                AddPerson(human);
+
                 break;
             case 2:
                 PeopleList();
                 break;
             case 3:
-                EditPerson();
+                char Name[MAX_CHAR_LENGHT], Surname[MAX_CHAR_LENGHT];
+                printf("-----------------------------------\n");
+                printf("Enter Surname and Name\n");
+                scanf("%s %s", Surname, Name);
+                printf("-----------------------------------\n");
+                getchar();
+
+                EditPerson(Surname, Name);
+
                 break;
             case 4:
-                DeletePerson();
+                printf("-----------------------------------\n");
+                printf("Enter Surname and Name\n");
+                scanf("%s %s", Surname, Name);
+                printf("-----------------------------------\n");
+                getchar();
+
+                DeletePerson(Surname, Name);
                 break;
             case 5:
                 printf("-----------------------------------\nExiting...\n-----------------------------------\n");
