@@ -118,7 +118,7 @@ int main()
         scanf("%d", &choice);
         printf("------------------------------------------\n");
         getchar();
-        if (choice >= 1 && choice <= 4) 
+        if (choice >= 1 && choice <= 4)
         {
             double result = process(choice);
             printf("%lf",result);            
