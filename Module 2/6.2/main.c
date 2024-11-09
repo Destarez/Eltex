@@ -3,44 +3,10 @@
 #include <string.h>
 #include <dlfcn.h>
 
+
 int main() {
     List *peopleList = createList();
     int choice, id = 1;
-
-    void *handle;
-    char *error;
-
-    // Define function pointers for operations
-    typedef person* (*createPersonFunc)(int id);
-    typedef void (*addPersonFunc)(List *peopleList, person *newPerson);
-    typedef void (*printListFunc)(List *peopleList);
-    typedef void (*editContactFunc)(person *p);
-    typedef void (*deletePersonFunc)(List *peopleList, const char *lastname);
-    typedef void (*deleteListFunc)(List *peopleList);
-    typedef void (*insertionSortFunc)(List **peopleList, int (*compare)(const void *, const void *));
-    
-    // Open the dynamic library
-    handle = dlopen("libdynamic.so", RTLD_LAZY);
-    
-    if (!handle) {
-        fprintf(stderr, "%s\n", dlerror());
-        return 1;
-    }
-
-    // Get function pointers from the shared library
-    createPersonFunc createPerson = (createPersonFunc) dlsym(handle, "createPerson");
-    addPersonFunc addPerson = (addPersonFunc) dlsym(handle, "pushBack");
-    printListFunc printList = (printListFunc) dlsym(handle, "printList");
-    editContactFunc editContact = (editContactFunc) dlsym(handle, "editContact");
-    deletePersonFunc deletePerson = (deletePersonFunc) dlsym(handle, "deletePerson");
-    deleteListFunc deleteList = (deleteListFunc) dlsym(handle, "deleteList");
-    insertionSortFunc insertionSort = (insertionSortFunc) dlsym(handle, "insertionSort");
-
-    // Check if function loading was successful
-    if (!createPerson || !addPerson || !printList || !editContact || !deletePerson || !deleteList || !insertionSort) {
-        fprintf(stderr, "Error loading functions from dynamic library: %s\n", dlerror());
-        return 1;
-    }
 
     while (1) {
         printf("\nMain Menu\n");
@@ -57,7 +23,7 @@ int main() {
         switch (choice) {
             case 1: {
                 person *newPerson = createPerson(id++);
-                
+
                 printf("Enter name: ");
                 fgets(newPerson->name, MAX_CHAR_LENGTH, stdin);
                 ClearNewline(newPerson->name);
@@ -94,8 +60,7 @@ int main() {
                 fgets(newPerson->phoneNumber.workPhone, MAX_CHAR_LENGTH, stdin);
                 ClearNewline(newPerson->phoneNumber.workPhone);
 
-                // Add person to list
-                addPerson(peopleList, newPerson);
+                pushBack(peopleList, newPerson);
                 insertionSort(&peopleList, compareSurname);
                 printf("List automatically sorted by surname.\n");
                 break;
@@ -139,7 +104,6 @@ int main() {
 
             case 6:
                 deleteList(peopleList);
-                dlclose(handle);
                 return 0;
 
             default:

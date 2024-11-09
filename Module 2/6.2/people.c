@@ -103,50 +103,29 @@ int compareSurname(void *a, void *b) {
 void insertionSort(List **list, int (*cmp)(void*, void*)) {
     if ((*list)->head == NULL) return;
 
-    Node *sorted = NULL; // Will be the sorted part of the list.
-    Node *current = (*list)->head;
-    
-    while (current) {
-        Node *next = current->next;  // Save the next node to continue iterating
-        Node *sortedPos = sorted;
+    List *out = createList();
+    pushBack(out, popFront(*list));
 
-        // Find the position where current node needs to be inserted
-        while (sortedPos && cmp(current->value, sortedPos->value) > 0) {
-            sortedPos = sortedPos->next;
+    Node *unsorted = (*list)->head;
+    while (unsorted) {
+        Node *sorted = out->head;
+        void *data = popFront(*list);
+
+        while (sorted && cmp(data, sorted->value) > 0) {
+            sorted = sorted->next;
         }
 
-        // Insert current node in the sorted part
-        if (sortedPos == NULL) {
-            // If no valid position, push it to the end of the sorted list
-            if (sorted == NULL) {
-                sorted = current; // First node in the sorted list
-            } else {
-                Node *tail = sorted;
-                while (tail->next) tail = tail->next;
-                tail->next = current;
-                current->prev = tail;
-            }
+        if (sorted) {
+            insertBeforeElement(out, sorted, data);
         } else {
-            // Insert before sortedPos
-            if (sortedPos->prev) {
-                sortedPos->prev->next = current;
-                current->prev = sortedPos->prev;
-            } else {
-                sorted = current;
-            }
-            current->next = sortedPos;
-            sortedPos->prev = current;
+            pushBack(out, data);
         }
 
-        current = next;  // Move to next node
+        unsorted = (*list)->head;
     }
 
-    // Update the original list to point to sorted list
-    (*list)->head = sorted;
-    (*list)->tail = sorted;
-    while ((*list)->tail && (*list)->tail->next) {
-        (*list)->tail = (*list)->tail->next;
-    }
+    free(*list);
+    *list = out;
 }
 
 void editContact(person *p) {
