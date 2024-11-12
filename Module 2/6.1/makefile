@@ -1,2 +1,2 @@
 all:
-	gcc main.c people.c -o main
+	gcc main.c -o main -L. -lmylib
