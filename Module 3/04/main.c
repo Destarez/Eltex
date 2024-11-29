@@ -18,7 +18,7 @@ int main(int argc, char *argv[]) {
     int p[2];
     if (pipe(p))
         {
-            perror("ошибка канала");
+            perror("Ошибка канала");
             exit(1);
         }
     
@@ -29,7 +29,7 @@ int main(int argc, char *argv[]) {
 
     int *numbers = (int *)malloc(count * sizeof(int));
         if (numbers == NULL) {
-            perror("Failed to allocate memory");
+            perror("Ошибка памяти");
             return 1;
         }
 
