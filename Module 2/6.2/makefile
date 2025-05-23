@@ -1,5 +1,8 @@
 all:
-	gcc -fPIC people.c -c
-	gcc -shared people.o -o libmylib.so
-	gcc main.c people.c -o a -L. -lmylib -Wl,-rpath=.
+	gcc -fPIC -c list.c -o list.o
+	gcc -shared list.o -o liblist.so
+	gcc -o main main.c -L. -llist -ldl
+	LD_LIBRARY_PATH=/home/destare/calculator/"Module 2"/6.2 ./main
+
+
 

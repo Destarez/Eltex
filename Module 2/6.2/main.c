@@ -1,113 +1,80 @@
-#include "people.h"
 #include <stdio.h>
+#include <stdlib.h>
 #include <string.h>
 #include <dlfcn.h>
-
+#include "list.h"
 
 int main() {
-    List *peopleList = createList();
-    int choice, id = 1;
+    double_linked_list contactList = {NULL, NULL};
+    void *handle;
+    int choice;
+    char surname[MAX_CHAR_LENGHT], name[MAX_CHAR_LENGHT];
+    handle =  dlopen("./liblist.so", RTLD_LAZY);
+    if (!handle)
+    {
+        fprintf(stderr, "Load library error %s \n", dlerror());
+        exit(1);
+    }
 
-    while (1) {
-        printf("\nMain Menu\n");
+    void (*ClearNewline)(char *) = dlsym(handle, "ClearNewline");
+    void (*InsertSorted)(char *, char *, double_linked_list *) = dlsym(handle, "InsertSorted");
+    void (*PrintList)(double_linked_list *) = dlsym(handle, "PrintList");
+    void (*DeleteItem)(char *, char *, double_linked_list *) = dlsym(handle, "DeleteItem");
+    void (*FreeMemory)(double_linked_list *) = dlsym(handle, "FreeMemory");
+
+
+
+    
+    do {
+        printf("\nMenu:\n");
         printf("1. Add person\n");
-        printf("2. View people\n");
-        printf("3. Edit contact by surname\n");
-        printf("4. Delete person by surname\n");
-        printf("5. Delete entire list\n");
-        printf("6. Exit\n");
-        printf("Enter choice: ");
+        printf("2. Person list\n");
+        printf("3. Delete person\n");
+        printf("4. Exit\n");
+        printf("Choose option: ");
         scanf("%d", &choice);
         getchar();
 
         switch (choice) {
-            case 1: {
-                person *newPerson = createPerson(id++);
+            case 1:
+                printf("Enter surname: ");
+                fgets(surname, MAX_CHAR_LENGHT, stdin);
+                ClearNewline(surname);
 
                 printf("Enter name: ");
-                fgets(newPerson->name, MAX_CHAR_LENGTH, stdin);
-                ClearNewline(newPerson->name);
+                fgets(name, MAX_CHAR_LENGHT, stdin);
+                ClearNewline(name);
 
-                printf("Enter surname: ");
-                fgets(newPerson->surname, MAX_CHAR_LENGTH, stdin);
-                ClearNewline(newPerson->surname);
-
-                printf("Enter patronymic (optional): ");
-                fgets(newPerson->patronymic, MAX_CHAR_LENGTH, stdin);
-                ClearNewline(newPerson->patronymic);
-
-                printf("Enter email (optional): ");
-                fgets(newPerson->email, MAX_CHAR_LENGTH, stdin);
-                ClearNewline(newPerson->email);
-
-                printf("Enter social media link (optional): ");
-                fgets(newPerson->socialMedia, MAX_CHAR_LENGTH, stdin);
-                ClearNewline(newPerson->socialMedia);
-
-                printf("Enter workplace (optional): ");
-                fgets(newPerson->occupation.workplace, MAX_CHAR_LENGTH, stdin);
-                ClearNewline(newPerson->occupation.workplace);
-
-                printf("Enter job post (optional): ");
-                fgets(newPerson->occupation.post, MAX_CHAR_LENGTH, stdin);
-                ClearNewline(newPerson->occupation.post);
-
-                printf("Enter personal phone (optional): ");
-                fgets(newPerson->phoneNumber.personalPhone, MAX_CHAR_LENGTH, stdin);
-                ClearNewline(newPerson->phoneNumber.personalPhone);
-
-                printf("Enter work phone (optional): ");
-                fgets(newPerson->phoneNumber.workPhone, MAX_CHAR_LENGTH, stdin);
-                ClearNewline(newPerson->phoneNumber.workPhone);
-
-                pushBack(peopleList, newPerson);
-                insertionSort(&peopleList, compareSurname);
-                printf("List automatically sorted by surname.\n");
+                InsertSorted(surname, name, &contactList);
                 break;
-            }
+
             case 2:
-                printList(peopleList);
+                PrintList(&contactList);
                 break;
 
-            case 3: {
-                printf("Enter surname of person to edit: ");
-                char lastname[MAX_CHAR_LENGTH];
-                fgets(lastname, MAX_CHAR_LENGTH, stdin);
-                ClearNewline(lastname);
-                
-                Node *current = peopleList->head;
-                while (current) {
-                    person *p = (person*) current->value;
-                    if (strcmp(p->surname, lastname) == 0) {
-                        editContact(p);
-                        break;
-                    }
-                    current = current->next;
-                }
-                if (!current) {
-                    printf("Person not found.\n");
-                }
-                break;
-            }
-            case 4: {
-                printf("Enter surname of person to delete: ");
-                char lastname[MAX_CHAR_LENGTH];
-                fgets(lastname, MAX_CHAR_LENGTH, stdin);
-                ClearNewline(lastname);
-                deletePerson(peopleList, lastname);
-                break;
-            }
-            case 5:
-                deleteList(peopleList);
-                peopleList = createList();
+            case 3:
+                printf("Enter surname: ");
+                fgets(surname, MAX_CHAR_LENGHT, stdin);
+                ClearNewline(surname);
+
+                printf("Enter name: ");
+                fgets(name, MAX_CHAR_LENGHT, stdin);
+                ClearNewline(name);
+
+                DeleteItem(surname, name, &contactList);
                 break;
 
-            case 6:
-                deleteList(peopleList);
-                return 0;
+            case 4:
+                printf("Free memory and exit...\n");
+                FreeMemory(&contactList);
+                dlclose(handle);
+                exit(1);
+                break;
 
             default:
-                printf("Invalid choice. Try again.\n");
+                printf("ERROR. Try again.\n");
         }
-    }
+    } while (choice != 4);
+
+    return 0;
 }

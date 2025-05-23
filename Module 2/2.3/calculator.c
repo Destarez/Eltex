@@ -69,7 +69,7 @@ typedef struct
     double (*func)(int n, ...);
 }Operation;
 
-double process(int operation)
+double process(int operation, int count, double numbers[])
 {
     Operation operations[] = 
     {
@@ -78,33 +78,8 @@ double process(int operation)
         {"multiply", multiply},
         {"divide", div}
     };
-    int count;
-    printf("Enter amount of numbers: ");
-    scanf("%d", &count);
-    if (count>=2 && count<=3)
-    {
-        double numbers[count];
-        printf("Enter %d numbers\n", count);
-        for( int i = 0; i < count ; i++)
-        {
-            scanf("%lf", &numbers[i]);
-        }
-        double result = 0;
-        
-        switch (count)
-        {
-            case 2:
-                result = operations[operation - 1].func(count,numbers[0],numbers[1]);
-                break;
-            case 3:
-                result = operations[operation - 1].func(count,numbers[0],numbers[1],numbers[2]);
-                break;
-        }
-    }
-    else 
-    {
-        printf("Wrong amount of numbers\n");
-    }
+    
+    return operations[operation-1].func (count, numbers[0], numbers[1], numbers[2], numbers[3], numbers[4], numbers[5], numbers[6]);
 };
 
 int main()
@@ -117,10 +92,18 @@ int main()
         printf("1.Addition\n2.Subtraction\n3.Multiplication\n4.Division\n5.Exit\n");
         scanf("%d", &choice);
         printf("------------------------------------------\n");
-        getchar();
         if (choice >= 1 && choice <= 4)
         {
-            double result = process(choice);
+            int count;
+            printf("Enter amount of numbers: ");
+            scanf("%d", &count);
+            double numbers[count];
+            printf("Enter %d numbers\n", count);
+            for( int i = 0; i < count ; i++)
+            {
+                scanf("%lf", &numbers[i]);
+            }
+            double result = process(choice, count, numbers);
             printf("%lf",result);            
         }
         else if (choice != 5)

@@ -75,10 +75,7 @@ int main()
                 printf("Enter %d number: ", i + 1);
                 scanf("%d", &numbers[i]);
             }
-            if (count == 2)
-                printf("Result: %d\n", sum(2, numbers[0], numbers[1]));
-            else if (count == 3)
-                printf("Result: %d\n", sum(3, numbers[0], numbers[1], numbers[2]));
+            printf("Result: %f\n", sum(count, numbers[0], numbers[1], numbers[2], numbers[3], numbers[4], numbers[5], numbers[6]));
         }
         
         else if (choice == 2)
@@ -92,10 +89,7 @@ int main()
                 printf("Enter %d number: ", i + 1);
                 scanf("%d", &numbers[i]);
             }
-            if (count == 2)
-                printf("Result: %d\n", dif(2, numbers[0], numbers[1]));
-            else if (count == 3)
-                printf("Result: %d\n", dif(3, numbers[0], numbers[1], numbers[2]));
+            printf("Result: %f\n", dif(count, numbers[0], numbers[1], numbers[2], numbers[3], numbers[4], numbers[5], numbers[6]));
         }
 
         else if (choice == 3)
@@ -109,10 +103,7 @@ int main()
                 printf("Enter %d number: ", i + 1);
                 scanf("%d", &numbers[i]);
             }
-            if (count == 2)
-                printf("Result: %d\n", multiply(2, numbers[0], numbers[1]));
-            else if (count == 3)
-                printf("Result: %d\n", multiply(3, numbers[0], numbers[1], numbers[2]));
+            printf("Result: %f\n", multiply(count, numbers[0], numbers[1], numbers[2], numbers[3], numbers[4], numbers[5], numbers[6]));
         }
 
         else if (choice == 4)
@@ -126,10 +117,7 @@ int main()
                 printf("Enter %d number: ", i + 1);
                 scanf("%lf", &numbers[i]);
             }
-            if (count == 2)
-                printf("Result: %lf\n", div(2, numbers[0], numbers[1]));
-            else if (count == 3)
-                printf("Result: %lf\n", div(3, numbers[0], numbers[1], numbers[2]));
+            printf("Result: %f\n", div(count, numbers[0], numbers[1], numbers[2], numbers[3], numbers[4], numbers[5], numbers[6]));
         }
     }
     return 0;
