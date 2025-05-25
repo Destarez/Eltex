@@ -1,0 +1,192 @@
+root@eltex-practice2-pg2-v19:~# git config --global user.name "Destarez"
+root@eltex-practice2-pg2-v19:~# git config --global user.email "destaredh@gmail.com"
+root@eltex-practice2-pg2-v19:~# git config --global init.defaultBranch main
+root@eltex-practice2-pg2-v19:~# apt install git gh
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+git is already the newest version (1:2.43.0-1ubuntu7.2).
+gh is already the newest version (2.45.0-1ubuntu0.2).
+0 upgraded, 0 newly installed, 0 to remove and 7 not upgraded.
+root@eltex-practice2-pg2-v19:~# ssh-keygen -t ed25519 -f ~/.ssh/Destarez_key
+Generating public/private ed25519 key pair.
+Enter passphrase (empty for no passphrase): 
+Enter same passphrase again: 
+Your identification has been saved in /root/.ssh/Destarez_key
+Your public key has been saved in /root/.ssh/Destarez_key.pub
+The key fingerprint is:
+SHA256:Waj5kuFifNLYSyrSTTfMYO9Ws3GfqZLDD1ZdCcfTG2k root@eltex-practice2-pg2-v19
+The key's randomart image is:
++--[ED25519 256]--+
+|            .....|
+|         .   ooE.|
+|        . .   +.o|
+|    o  o o . . . |
+|   . =+ S . .    |
+|   ..=*++..      |
+| . o*oO++* . o   |
+|. o..*o+*.  +    |
+| . ....  +o.     |
++----[SHA256]-----+
+root@eltex-practice2-pg2-v19:~# gh auth login
+? What account do you want to log into? GitHub.com
+? What is your preferred protocol for Git operations on this host? SSH
+? Upload your SSH public key to your GitHub account? /root/.ssh/Destarez_key.pub
+? Title for your SSH key: eltex-practice2-pg2-v19
+? How would you like to authenticate GitHub CLI? Login with a web browser
+
+! First copy your one-time code: 077A-E95C
+Press Enter to open github.com in your browser... 
+! Failed opening a web browser at https://github.com/login/device
+  exec: "xdg-open,x-www-browser,www-browser,wslview": executable file not found in $PATH
+  Please try entering the URL in your browser manually
+✓ Authentication complete.
+- gh config set -h github.com git_protocol ssh
+✓ Configured git protocol
+! Authentication credentials saved in plain text
+✓ Uploaded the SSH key to your GitHub account: /root/.ssh/Destarez_key.pub
+✓ Logged in as Destarez
+! You were already logged in to this account
+root@eltex-practice2-pg2-v19:~# gh auth setup-git --hostname github.com
+root@eltex-practice2-pg2-v19:~# gh auth status
+github.com
+  ✓ Logged in to github.com account Destarez (/root/.config/gh/hosts.yml)
+  - Active account: true
+  - Git operations protocol: ssh
+  - Token: gho_************************************
+  - Token scopes: 'admin:public_key', 'gist', 'read:org', 'repo'
+root@eltex-practice2-pg2-v19:~# gh repo create --public eltex-practice
+✓ Created repository Destarez/eltex-practice on GitHub
+  https://github.com/Destarez/eltex-practice
+root@eltex-practice2-pg2-v19:~# mkdir ~/eltex-practice && cd ~/eltex-practice
+root@eltex-practice2-pg2-v19:~/eltex-practice# echo '# Весенняя практика Eltex 2025.' >> README.md
+root@eltex-practice2-pg2-v19:~/eltex-practice# git init
+Initialized empty Git repository in /root/eltex-practice/.git/
+root@eltex-practice2-pg2-v19:~/eltex-practice# git add README.md
+root@eltex-practice2-pg2-v19:~/eltex-practice# git commit -m "First commit"
+[main (root-commit) 709da43] First commit
+ 1 file changed, 1 insertion(+)
+ create mode 100644 README.md
+root@eltex-practice2-pg2-v19:~/eltex-practice# git branch -M main
+root@eltex-practice2-pg2-v19:~/eltex-practice# git remote add origin https://github.com/Destarez/eltex-practice
+root@eltex-practice2-pg2-v19:~/eltex-practice# git status 
+On branch main
+nothing to commit, working tree clean
+root@eltex-practice2-pg2-v19:~/eltex-practice# git push -u origin main
+Enumerating objects: 3, done.
+Counting objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 271 bytes | 271.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/Destarez/eltex-practice
+ * [new branch]      main -> main
+branch 'main' set up to track 'origin/main'.
+root@eltex-practice2-pg2-v19:~/eltex-practice# mkdir -p module1/task1
+root@eltex-practice2-pg2-v19:~/eltex-practice# mkdir module1/task2
+root@eltex-practice2-pg2-v19:~/eltex-practice# mkdir module2/task3
+root@eltex-practice2-pg2-v19:~/eltex-practice# exit
+eltex-pg2-v9@eltex:~$ scp module1_part1.txt root@172.16.9.209:/root/eltex-practice/module1/task1/
+module1_part1.txt                                                             100%  124   430.6KB/s   00:00
+eltex-pg2-v9@eltex:~$ scp eltex-pg2-v9_part.log root@172.16.9.209:/root/eltex-practice/module1/task1/
+eltex-pg2-v9_part.log                                                         100%  537     1.6MB/s   00:00
+eltex-pg2-v9@eltex:~$ scp eltex-pg2-v9_part3.log root@172.16.9.209:/root/eltex-practice/module1/task1/
+eltex-pg2-v9_part3.log                                                        100%  433     1.2MB/s   00:00 
+eltex-pg2-v9@eltex:~$ scp eltex-pg2-v9_part3_gt50M.log root@172.16.9.209:/root/eltex-practice/module1/task1/
+eltex-pg2-v9_part3_gt50M.log                                                  100%   55   168.7KB/s   00:00 
+eltex-pg2-v9@eltex:~$ ssh root@172.16.9.209
+root@eltex-practice2-pg2-v19:~/eltex-practice# git add .
+root@eltex-practice2-pg2-v19:~/eltex-practice# git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+	new file:   eltex-pg2-v9_part.log
+	new file:   eltex-pg2-v9_part3.log
+	new file:   eltex-pg2-v9_part3_gt50M.log
+	new file:   module1_part1.txt
+root@eltex-practice2-pg2-v19:~/eltex-practice# git commit -m "Added first practice"
+[main 5605e91] Added first practice
+ 4 files changed, 40 insertions(+)
+ create mode 100644 module1/task1/eltex-pg2-v9_part.log
+ create mode 100644 module1/task1/eltex-pg2-v9_part3.log
+ create mode 100644 module1/task1/eltex-pg2-v9_part3_gt50M.log
+ create mode 100644 module1/task1/module1_part1.txt
+root@eltex-practice2-pg2-v19:~/eltex-practice# git push
+Enumerating objects: 9, done.
+Counting objects: 100% (9/9), done.
+Delta compression using up to 2 threads
+Compressing objects: 100% (7/7), done.
+Writing objects: 100% (8/8), 1.17 KiB | 1.17 MiB/s, done.
+Total 8 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/Destarez/eltex-practice
+   709da43..5605e91  main -> main
+root@eltex-practice2-pg2-v19:~/eltex-practice# mkdir ~/eltex-practice-clone && cd ~/eltex-practice-clone
+root@eltex-practice2-pg2-v19:~/eltex-practice-clone# git clone https://github.com/Destarez/eltex-practice .
+Cloning into '.'...
+remote: Enumerating objects: 11, done.
+remote: Counting objects: 100% (11/11), done.
+remote: Compressing objects: 100% (8/8), done.
+remote: Total 11 (delta 0), reused 11 (delta 0), pack-reused 0 (from 0)
+Receiving objects: 100% (11/11), done.
+root@eltex-practice2-pg2-v19:~# touch temp-file.txt
+root@eltex-practice2-pg2-v19:~# echo 'This is temp message for task' >> temp-file.txt 
+root@eltex-practice2-pg2-v19:~/eltex-practice# git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	temp-file.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+root@eltex-practice2-pg2-v19:~/eltex-practice# git add .
+root@eltex-practice2-pg2-v19:~/eltex-practice# git commit -m "Added temp file in main directory"
+[main 9704789] Added temp file in main directory
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 temp-file.txt
+root@eltex-practice2-pg2-v19:~/eltex-practice# git push
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 2 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 331 bytes | 331.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/Destarez/eltex-practice
+   5605e91..9704789  main -> main
+root@eltex-practice2-pg2-v19:~/eltex-practice-clone# git fetch
+remote: Enumerating objects: 4, done.
+remote: Counting objects: 100% (4/4), done.
+remote: Compressing objects: 100% (2/2), done.
+remote: Total 3 (delta 0), reused 3 (delta 0), pack-reused 0 (from 0)
+Unpacking objects: 100% (3/3), 311 bytes | 311.00 KiB/s, done.
+From https://github.com/Destarez/eltex-practice
+   5605e91..9704789  main       -> origin/main
+root@eltex-practice2-pg2-v19:~/eltex-practice-clone# git log origin/main
+commit 9704789a8007a5c26a6b2515c60079e350a0103f (origin/main, origin/HEAD)
+Author: Destarez <destaredh@gmail.com>
+Date:   Fri Mar 14 11:58:31 2025 +0000
+
+    Added temp file in main directory
+
+commit 5605e91a6d02269fca45febd345386a5fa07e512 (HEAD -> main)
+Author: Destarez <destaredh@gmail.com>
+Date:   Thu Mar 13 21:41:03 2025 +0000
+
+    Added first practice
+
+commit 709da4337f2ac9bf87d5fcab198b80e735123a1b
+Author: Destarez <destaredh@gmail.com>
+Date:   Thu Mar 13 21:14:18 2025 +0000
+
+    First commit
+root@eltex-practice2-pg2-v19:~/eltex-practice-clone# git diff main origin/main
+diff --git a/temp-file.txt b/temp-file.txt
+new file mode 100644
+index 0000000..e69de29
+root@eltex-practice2-pg2-v19:~/eltex-practice-clone# git merge origin/main
+Updating 5605e91..9704789
+Fast-forward
+ temp-file.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 temp-file.txt
+root@eltex-practice2-pg2-v19:~# cp practice2_part1.log practice2_part2.log practice2_part3.log eltex-practice/module1/task2/

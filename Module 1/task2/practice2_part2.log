@@ -1,0 +1,545 @@
+Script started on 2025-05-25 10:43:40+00:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="115" LINES="54"]
+^[[?2004h^[]0;root@eltex-practice2-pg1-v19: ~^Groot@eltex-practice2-pg1-v19:~# ^[[7mНайдите все записи из лога загрузки, доступного через команду journalctl с опцией -^[[27m^[[7mb^[[27m^[[7m в первые полторы секунды с момента загрузки^[[27m^[[A^H^H^H^H^H^H^H^H^H^H^H^H^HНайдите все >
+^[[?2004h^[]0;root@eltex-practice2-pg1-v19: ~^Groot@eltex-practice2-pg1-v19:~# ^[[7mjournalctl -b --since "0" --until "1.5s"^[[27m^M^[[C^[[C^[[C^[[C^[[C^[[C^[[C^[[C^[[C^[[C^[[C^[[C^[[C^[[C^[[C^[[C^[[C^[[C^[[C^[[C^[[C^[[C^[[C^[[C^[[C^[[C^[[C^[[C^[[C^[[C^[[C^[[Cjournalctl -b --since >
+^[[?2004l^M^[[0;1;31mFailed to parse timestamp: 0^[[0m^M
+^[[?2004h^[]0;root@eltex-practice2-pg1-v19: ~^Groot@eltex-practice2-pg1-v19:~# ^[[7mjournalctl -b --until "2025-03-12 20:03:46"^[[27m^G^M^[[C^[[C^[[C^[[C^[[C^[[C^[[C^[[C^[[C^[[C^[[C^[[C^[[C^[[C^[[C^[[C^[[C^[[C^[[C^[[C^[[C^[[C^[[C^[[C^[[C^[[C^[[C^[[C^[[C^[[C^[[C^[[Cjournalctl -b --u>
+^[[?2004l^M^[[?1h^[=^MApr 07 02:13:17 localhost kernel: ^[[0;1;39m^[[0;1;31m^[[0;1;39mLinux version 6.8.0-57-generic (buildd@lcy02-amd64-040) (x86_64-linux-gnu-gcc-13^[[m^[[7m>^[[27m
+Apr 07 02:13:17 localhost kernel: Command line: BOOT_IMAGE=/vmlinuz-6.8.0-57-generic root=/dev/mapper/ubuntu--vg-u^[[m^[[7m>^[[27m
+Apr 07 02:13:17 localhost kernel: KERNEL supported cpus:^[[m
+Apr 07 02:13:17 localhost kernel:   Intel GenuineIntel^[[m
+Apr 07 02:13:17 localhost kernel:   AMD AuthenticAMD^[[m
+Apr 07 02:13:17 localhost kernel:   Hygon HygonGenuine^[[m
+Apr 07 02:13:17 localhost kernel:   Centaur CentaurHauls^[[m
+Apr 07 02:13:17 localhost kernel:   zhaoxin   Shanghai  ^[[m
+Apr 07 02:13:17 localhost kernel: BIOS-provided physical RAM map:^[[m
+Apr 07 02:13:17 localhost kernel: BIOS-e820: [mem 0x0000000000000000-0x000000000009fbff] usable^[[m
+Apr 07 02:13:17 localhost kernel: BIOS-e820: [mem 0x000000000009fc00-0x000000000009ffff] reserved^[[m
+Apr 07 02:13:17 localhost kernel: BIOS-e820: [mem 0x00000000000f0000-0x00000000000fffff] reserved^[[m
+Apr 07 02:13:17 localhost kernel: BIOS-e820: [mem 0x0000000000100000-0x00000000bffd9fff] usable^[[m
+Apr 07 02:13:17 localhost kernel: BIOS-e820: [mem 0x00000000bffda000-0x00000000bfffffff] reserved^[[m
+Apr 07 02:13:17 localhost kernel: BIOS-e820: [mem 0x00000000feffc000-0x00000000feffffff] reserved^[[m
+Apr 07 02:13:17 localhost kernel: BIOS-e820: [mem 0x00000000fffc0000-0x00000000ffffffff] reserved^[[m
+Apr 07 02:13:17 localhost kernel: BIOS-e820: [mem 0x0000000100000000-0x000000013fffffff] usable^[[m
+Apr 07 02:13:17 localhost kernel: BIOS-e820: [mem 0x000000fd00000000-0x000000ffffffffff] reserved^[[m
+Apr 07 02:13:17 localhost kernel: NX (Execute Disable) protection: active^[[m
+Apr 07 02:13:17 localhost kernel: APIC: Static calls initialized^[[m
+Apr 07 02:13:17 localhost kernel: SMBIOS 2.8 present.^[[m
+Apr 07 02:13:17 localhost kernel: DMI: QEMU Standard PC (i440FX + PIIX, 1996), BIOS rel-1.16.3-0-ga6ed6b701f0a-pre^[[m^[[7m>^[[27m
+Apr 07 02:13:17 localhost kernel: Hypervisor detected: KVM^[[m
+Apr 07 02:13:17 localhost kernel: kvm-clock: Using msrs 4b564d01 and 4b564d00^[[m
+Apr 07 02:13:17 localhost kernel: kvm-clock: using sched offset of 465160743160 cycles^[[m
+Apr 07 02:13:17 localhost kernel: clocksource: kvm-clock: mask: 0xffffffffffffffff max_cycles: 0x1cd42e4dffb, max_^[[m^[[7m>^[[27m
+Apr 07 02:13:17 localhost kernel: tsc: Detected 3399.996 MHz processor^[[m
+Apr 07 02:13:17 localhost kernel: ^[[0;38;5;245m^[[0;1;31m^[[0;38;5;245me820: update [mem 0x00000000-0x00000fff] usable ==> reserved^[[0m^[[m
+Apr 07 02:13:17 localhost kernel: ^[[0;38;5;245m^[[0;1;31m^[[0;38;5;245me820: remove [mem 0x000a0000-0x000fffff] usable^[[0m^[[m
+Apr 07 02:13:17 localhost kernel: AGP: No AGP bridge found^[[m
+Apr 07 02:13:17 localhost kernel: last_pfn = 0x140000 max_arch_pfn = 0x400000000^[[m
+Apr 07 02:13:17 localhost kernel: MTRR map: 4 entries (3 fixed + 1 variable; max 19), built from 8 variable MTRRs^[[m
+Apr 07 02:13:17 localhost kernel: x86/PAT: Configuration [0-7]: WB  WC  UC- UC  WB  WP  UC- WT  ^[[m
+Apr 07 02:13:17 localhost kernel: last_pfn = 0xbffda max_arch_pfn = 0x400000000^[[m
+Apr 07 02:13:17 localhost kernel: found SMP MP-table at [mem 0x000f5450-0x000f545f]^[[m
+Apr 07 02:13:17 localhost kernel: RAMDISK: [mem 0x2fccb000-0x33e5cfff]^[[m
+Apr 07 02:13:17 localhost kernel: ACPI: Early table checksum verification disabled^[[m
+Apr 07 02:13:17 localhost kernel: ACPI: RSDP 0x00000000000F5250 000014 (v00 BOCHS )^[[m
+Apr 07 02:13:17 localhost kernel: ACPI: RSDT 0x00000000BFFE3BFC 000038 (v01 BOCHS  BXPC     00000001 BXPC 00000001)^[[m
+Apr 07 02:13:17 localhost kernel: ACPI: FACP 0x00000000BFFE39DE 000074 (v01 BOCHS  BXPC     00000001 BXPC 00000001)^[[m
+Apr 07 02:13:17 localhost kernel: ACPI: DSDT 0x00000000BFFDF040 00499E (v01 BOCHS  BXPC     00000001 BXPC 00000001)^[[m
+Apr 07 02:13:17 localhost kernel: ACPI: FACS 0x00000000BFFDF000 000040^[[m
+Apr 07 02:13:17 localhost kernel: ACPI: APIC 0x00000000BFFE3A52 000080 (v03 BOCHS  BXPC     00000001 BXPC 00000001)^[[m
+Apr 07 02:13:17 localhost kernel: ACPI: SSDT 0x00000000BFFE3AD2 0000CA (v01 BOCHS  VMGENID  00000001 BXPC 00000001)^[[m
+Apr 07 02:13:17 localhost kernel: ACPI: HPET 0x00000000BFFE3B9C 000038 (v01 BOCHS  BXPC     00000001 BXPC 00000001)^[[m
+Apr 07 02:13:17 localhost kernel: ACPI: WAET 0x00000000BFFE3BD4 000028 (v01 BOCHS  BXPC     00000001 BXPC 00000001)^[[m
+Apr 07 02:13:17 localhost kernel: ACPI: Reserving FACP table memory at [mem 0xbffe39de-0xbffe3a51]^[[m
+Apr 07 02:13:17 localhost kernel: ACPI: Reserving DSDT table memory at [mem 0xbffdf040-0xbffe39dd]^[[m
+Apr 07 02:13:17 localhost kernel: ACPI: Reserving FACS table memory at [mem 0xbffdf000-0xbffdf03f]^[[m
+Apr 07 02:13:17 localhost kernel: ACPI: Reserving APIC table memory at [mem 0xbffe3a52-0xbffe3ad1]^[[m
+Apr 07 02:13:17 localhost kernel: ACPI: Reserving SSDT table memory at [mem 0xbffe3ad2-0xbffe3b9b]^[[m
+Apr 07 02:13:17 localhost kernel: ACPI: Reserving HPET table memory at [mem 0xbffe3b9c-0xbffe3bd3]^[[m
+Apr 07 02:13:17 localhost kernel: ACPI: Reserving WAET table memory at [mem 0xbffe3bd4-0xbffe3bfb]^[[m
+^[[7mlines 1-53^[[27m^[[K^G^M^[[K^[[?1l^[>
+^[[?2004h^[]0;root@eltex-practice2-pg1-v19: ~^Groot@eltex-practice2-pg1-v19:~# ^[[7mfind / -type f -name "auth.log" 2>/dev/null ^[[27m^M^[[C^[[C^[[C^[[C^[[C^[[C^[[C^[[C^[[C^[[C^[[C^[[C^[[C^[[C^[[C^[[C^[[C^[[C^[[C^[[C^[[C^[[C^[[C^[[C^[[C^[[C^[[C^[[C^[[C^[[C^[[C^[[Cfind / -type f -na>
+^[[?2004l^M/var/log/auth.log
+^[[?2004h^[]0;root@eltex-practice2-pg1-v19: ~^Groot@eltex-practice2-pg1-v19:~# ^[[7mfind /var/log -name "auth.log" -exec awk '{print $1, $2, $3, $5, $6, $7, $8, $9, $1^[[27m^[[7m0^[[27m^[[7m}' {} \; | sed -E 's/\[[0-9]+\]//g' | sort -k4^[[27m^[[A^H^H^H^H^H^H^H^H^H^H^H^H^H^H^Hfind />
+^[[?2004l^M2025-05-25T09:12:04.286477+00:00 localhost sshd: 1 more authentication failure; logname= uid=0
+2025-05-25T07:32:46.583795+00:00 localhost systemd-logind: 8263 logged out. Waiting for processes
+2025-05-25T07:45:50.543017+00:00 localhost systemd-logind: 8267 logged out. Waiting for processes
+2025-05-25T08:36:13.177211+00:00 localhost systemd-logind: 8270 logged out. Waiting for processes
+2025-05-25T09:14:57.202368+00:00 localhost systemd-logind: 8281 logged out. Waiting for processes
+2025-05-25T10:37:12.882663+00:00 localhost systemd-logind: 8284 logged out. Waiting for processes
+2025-05-25T10:40:46.948023+00:00 localhost systemd-logind: 8296 logged out. Waiting for processes
+2025-05-25T10:41:13.582979+00:00 localhost systemd-logind: 8298 logged out. Waiting for processes
+2025-05-25T09:33:03.793077+00:00 localhost groupadd: added to /etc/group: name=user2, GID=1002
+2025-05-25T09:33:29.495214+00:00 localhost groupadd: added to /etc/group: name=user3, GID=1003
+2025-05-25T09:33:03.861785+00:00 localhost groupadd: added to /etc/gshadow: name=user2
+2025-05-25T09:33:29.557668+00:00 localhost groupadd: added to /etc/gshadow: name=user3
+2025-05-25T09:19:10.359092+00:00 localhost useradd: adding user 'user1', exit code: 9
+2025-05-25T09:25:55.651514+00:00 localhost useradd: adding user 'user1', exit code: 9
+2025-05-25T09:11:43.457875+00:00 localhost sshd: authentication failure; logname= uid=0 euid=0 tty=ssh
+2025-05-25T09:05:10.889734+00:00 localhost sshd: closed by authenticating user root 172.16.8.2
+2025-05-25T09:05:11.026808+00:00 localhost sshd: closed by authenticating user root 172.16.8.2
+2025-05-25T09:10:13.188897+00:00 localhost sshd: closed by authenticating user root 172.16.8.2
+2025-05-25T09:12:04.286286+00:00 localhost sshd: closed by authenticating user root 172.16.8.2
+2025-05-25T07:45:50.541078+00:00 localhost sshd: disconnect from 172.16.8.2 port 40378:11: disconnected
+2025-05-25T10:41:13.581359+00:00 localhost sshd: disconnect from 172.16.8.2 port 46734:11: disconnected
+2025-05-25T10:37:12.873636+00:00 localhost sshd: disconnect from 172.16.8.2 port 47902:11: disconnected
+2025-05-25T09:14:57.200504+00:00 localhost sshd: disconnect from 172.16.8.2 port 56846:11: disconnected
+2025-05-25T10:40:46.946030+00:00 localhost sshd: disconnect from 172.16.8.2 port 58940:11: disconnected
+2025-05-25T07:32:46.582383+00:00 localhost sshd: disconnect from 172.16.8.2 port 59362:11: disconnected
+2025-05-25T08:36:12.782074+00:00 localhost sshd: disconnect from 172.16.8.2 port 60998:11: disconnected
+2025-05-25T07:45:50.541229+00:00 localhost sshd: from user root 172.16.8.2 port 40378
+2025-05-25T10:41:13.581432+00:00 localhost sshd: from user root 172.16.8.2 port 46734
+2025-05-25T10:37:12.882519+00:00 localhost sshd: from user root 172.16.8.2 port 47902
+2025-05-25T09:14:57.200655+00:00 localhost sshd: from user root 172.16.8.2 port 56846
+2025-05-25T10:40:46.946139+00:00 localhost sshd: from user root 172.16.8.2 port 58940
+2025-05-25T07:32:46.582531+00:00 localhost sshd: from user root 172.16.8.2 port 59362
+2025-05-25T08:36:13.177009+00:00 localhost sshd: from user root 172.16.8.2 port 60998
+2025-05-25T09:24:53.805347+00:00 localhost useradd: group: name=user1, GID=1001
+2025-05-25T09:30:04.314316+00:00 localhost useradd: group: name=user1, GID=1001
+2025-05-25T09:33:03.862595+00:00 localhost groupadd: group: name=user2, GID=1002
+2025-05-25T09:33:29.558473+00:00 localhost groupadd: group: name=user3, GID=1003
+2025-05-25T09:20:27.464318+00:00 localhost userdel: group 'user1' owned by 'user1'
+2025-05-25T09:26:03.538450+00:00 localhost userdel: group 'user1' owned by 'user1'
+2025-05-25T09:20:45.624513+00:00 localhost userdel: group 'user2' owned by 'user2'
+2025-05-25T09:20:58.089566+00:00 localhost userdel: group 'user3' owned by 'user3'
+2025-05-25T07:24:50.922282+00:00 localhost sshd: listening on :: port 22.
+2025-05-25T09:33:15.553635+00:00 localhost gpasswd: of group users set by root
+2025-05-25T09:33:42.399501+00:00 localhost gpasswd: of group users set by root
+2025-05-25T09:31:08.178852+00:00 localhost passwd: password changed for user1
+2025-05-25T09:33:08.216210+00:00 localhost passwd: password changed for user2
+2025-05-25T09:33:35.587500+00:00 localhost passwd: password changed for user3
+2025-05-25T10:01:50.571537+00:00 localhost chage: password expiry for user1
+2025-05-25T10:01:55.269154+00:00 localhost chage: password expiry for user2
+2025-05-25T10:01:58.492513+00:00 localhost chage: password expiry for user3
+2025-05-25T09:11:45.055235+00:00 localhost sshd: password for root from 172.16.8.2 port
+2025-05-25T09:11:59.040724+00:00 localhost sshd: password for root from 172.16.8.2 port
+2025-05-25T09:12:29.516715+00:00 localhost sshd: password for root from 172.16.8.2 port
+2025-05-25T09:16:20.796288+00:00 localhost sshd: password for root from 172.16.8.2 port
+2025-05-25T10:40:46.532899+00:00 localhost sshd: password for root from 172.16.8.2 port
+2025-05-25T10:41:13.408660+00:00 localhost sshd: password for root from 172.16.8.2 port
+2025-05-25T10:41:42.715157+00:00 localhost sshd: password for root from 172.16.8.2 port
+2025-05-25T07:24:51.384469+00:00 localhost sshd: publickey for root from 172.16.8.2 port
+2025-05-25T07:37:12.207085+00:00 localhost sshd: publickey for root from 172.16.8.2 port
+2025-05-25T07:48:06.266960+00:00 localhost sshd: publickey for root from 172.16.8.2 port
+2025-05-25T07:32:46.584802+00:00 localhost systemd-logind: session 8263.
+2025-05-25T07:24:51.450618+00:00 localhost systemd-logind: session 8263 of user root.
+2025-05-25T07:45:50.543431+00:00 localhost systemd-logind: session 8267.
+2025-05-25T07:37:12.223623+00:00 localhost systemd-logind: session 8267 of user root.
+2025-05-25T08:36:13.177522+00:00 localhost systemd-logind: session 8270.
+2025-05-25T07:48:06.282373+00:00 localhost systemd-logind: session 8270 of user root.
+2025-05-25T09:14:57.203208+00:00 localhost systemd-logind: session 8281.
+2025-05-25T09:12:29.532363+00:00 localhost systemd-logind: session 8281 of user root.
+2025-05-25T10:37:12.882939+00:00 localhost systemd-logind: session 8284.
+2025-05-25T09:16:20.814585+00:00 localhost systemd-logind: session 8284 of user root.
+2025-05-25T10:40:46.948505+00:00 localhost systemd-logind: session 8296.
+2025-05-25T10:40:46.550716+00:00 localhost systemd-logind: session 8296 of user root.
+2025-05-25T10:41:13.583751+00:00 localhost systemd-logind: session 8298.
+2025-05-25T10:41:13.424529+00:00 localhost systemd-logind: session 8298 of user root.
+2025-05-25T10:41:42.728399+00:00 localhost systemd-logind: session 8300 of user root.
+2025-05-25T00:05:02.334882+00:00 localhost CRON: session closed for user root
+2025-05-25T00:15:01.729913+00:00 localhost CRON: session closed for user root
+2025-05-25T00:17:02.920709+00:00 localhost CRON: session closed for user root
+2025-05-25T00:25:03.363501+00:00 localhost CRON: session closed for user root
+2025-05-25T00:35:01.742353+00:00 localhost CRON: session closed for user root
+2025-05-25T00:45:01.747031+00:00 localhost CRON: session closed for user root
+2025-05-25T00:55:01.751754+00:00 localhost CRON: session closed for user root
+2025-05-25T01:05:01.756165+00:00 localhost CRON: session closed for user root
+2025-05-25T01:15:01.760411+00:00 localhost CRON: session closed for user root
+2025-05-25T01:17:02.388225+00:00 localhost CRON: session closed for user root
+2025-05-25T01:25:02.378906+00:00 localhost CRON: session closed for user root
+2025-05-25T01:35:01.773345+00:00 localhost CRON: session closed for user root
+2025-05-25T01:45:01.778081+00:00 localhost CRON: session closed for user root
+2025-05-25T01:55:01.782950+00:00 localhost CRON: session closed for user root
+2025-05-25T02:05:01.787386+00:00 localhost CRON: session closed for user root
+2025-05-25T02:15:01.791972+00:00 localhost CRON: session closed for user root
+2025-05-25T02:17:02.917209+00:00 localhost CRON: session closed for user root
+2025-05-25T02:25:02.573935+00:00 localhost CRON: session closed for user root
+2025-05-25T02:35:01.805198+00:00 localhost CRON: session closed for user root
+2025-05-25T02:45:01.809856+00:00 localhost CRON: session closed for user root
+2025-05-25T02:55:01.815181+00:00 localhost CRON: session closed for user root
+2025-05-25T03:05:01.819823+00:00 localhost CRON: session closed for user root
+2025-05-25T03:10:03.970817+00:00 localhost CRON: session closed for user root
+2025-05-25T03:15:03.746902+00:00 localhost CRON: session closed for user root
+2025-05-25T03:17:01.830623+00:00 localhost CRON: session closed for user root
+2025-05-25T03:25:01.834926+00:00 localhost CRON: session closed for user root
+2025-05-25T03:30:03.373080+00:00 localhost CRON: session closed for user root
+2025-05-25T03:35:03.646275+00:00 localhost CRON: session closed for user root
+2025-05-25T03:45:01.846677+00:00 localhost CRON: session closed for user root
+2025-05-25T03:55:01.850807+00:00 localhost CRON: session closed for user root
+2025-05-25T04:05:01.855189+00:00 localhost CRON: session closed for user root
+2025-05-25T04:15:03.273050+00:00 localhost CRON: session closed for user root
+2025-05-25T04:17:01.863400+00:00 localhost CRON: session closed for user root
+2025-05-25T04:25:01.867483+00:00 localhost CRON: session closed for user root
+2025-05-25T04:35:01.872066+00:00 localhost CRON: session closed for user root
+2025-05-25T04:45:01.876784+00:00 localhost CRON: session closed for user root
+2025-05-25T04:55:01.881469+00:00 localhost CRON: session closed for user root
+2025-05-25T05:05:01.885585+00:00 localhost CRON: session closed for user root
+2025-05-25T05:15:01.889731+00:00 localhost CRON: session closed for user root
+2025-05-25T05:17:02.569566+00:00 localhost CRON: session closed for user root
+2025-05-25T05:25:02.912872+00:00 localhost CRON: session closed for user root
+2025-05-25T05:35:01.904185+00:00 localhost CRON: session closed for user root
+2025-05-25T05:45:01.908847+00:00 localhost CRON: session closed for user root
+2025-05-25T05:55:01.914388+00:00 localhost CRON: session closed for user root
+2025-05-25T06:05:01.919088+00:00 localhost CRON: session closed for user root
+2025-05-25T06:15:01.923694+00:00 localhost CRON: session closed for user root
+2025-05-25T06:17:03.549595+00:00 localhost CRON: session closed for user root
+2025-05-25T06:25:03.516470+00:00 localhost CRON: session closed for user root
+2025-05-25T06:25:03.516562+00:00 localhost CRON: session closed for user root
+2025-05-25T06:35:01.939819+00:00 localhost CRON: session closed for user root
+2025-05-25T06:45:01.944149+00:00 localhost CRON: session closed for user root
+2025-05-25T06:47:02.495854+00:00 localhost CRON: session closed for user root
+2025-05-25T06:55:02.897366+00:00 localhost CRON: session closed for user root
+2025-05-25T07:05:01.958848+00:00 localhost CRON: session closed for user root
+2025-05-25T07:15:01.963426+00:00 localhost CRON: session closed for user root
+2025-05-25T07:17:02.978888+00:00 localhost CRON: session closed for user root
+2025-05-25T07:25:01.972576+00:00 localhost CRON: session closed for user root
+2025-05-25T07:32:46.582570+00:00 localhost sshd: session closed for user root
+2025-05-25T07:35:01.976923+00:00 localhost CRON: session closed for user root
+2025-05-25T07:45:01.981573+00:00 localhost CRON: session closed for user root
+2025-05-25T07:45:50.541259+00:00 localhost sshd: session closed for user root
+2025-05-25T07:55:01.986030+00:00 localhost CRON: session closed for user root
+2025-05-25T08:05:01.990516+00:00 localhost CRON: session closed for user root
+2025-05-25T08:15:02.471999+00:00 localhost CRON: session closed for user root
+2025-05-25T08:17:01.998515+00:00 localhost CRON: session closed for user root
+2025-05-25T08:25:02.002798+00:00 localhost CRON: session closed for user root
+2025-05-25T08:35:01.008822+00:00 localhost CRON: session closed for user root
+2025-05-25T08:36:13.177282+00:00 localhost sshd: session closed for user root
+2025-05-25T08:45:01.071086+00:00 localhost CRON: session closed for user root
+2025-05-25T08:55:01.017831+00:00 localhost CRON: session closed for user root
+2025-05-25T09:05:01.023524+00:00 localhost CRON: session closed for user root
+2025-05-25T09:14:57.200677+00:00 localhost sshd: session closed for user root
+2025-05-25T09:15:01.027740+00:00 localhost CRON: session closed for user root
+2025-05-25T09:17:02.585618+00:00 localhost CRON: session closed for user root
+2025-05-25T09:25:01.163724+00:00 localhost CRON: session closed for user root
+2025-05-25T09:35:01.169065+00:00 localhost CRON: session closed for user root
+2025-05-25T09:45:01.173794+00:00 localhost CRON: session closed for user root
+2025-05-25T09:51:16.532185+00:00 localhost sudo: session closed for user root
+2025-05-25T09:51:26.464703+00:00 localhost sudo: session closed for user root
+2025-05-25T09:52:45.017175+00:00 localhost sudo: session closed for user root
+2025-05-25T09:53:07.984268+00:00 localhost sudo: session closed for user root
+2025-05-25T09:54:56.197700+00:00 localhost sudo: session closed for user root
+2025-05-25T09:55:01.218052+00:00 localhost CRON: session closed for user root
+2025-05-25T10:05:01.223694+00:00 localhost CRON: session closed for user root
+2025-05-25T10:15:01.227860+00:00 localhost CRON: session closed for user root
+2025-05-25T10:17:02.495231+00:00 localhost CRON: session closed for user root
+2025-05-25T10:25:01.340578+00:00 localhost CRON: session closed for user root
+2025-05-25T10:35:01.240762+00:00 localhost CRON: session closed for user root
+2025-05-25T10:37:12.882736+00:00 localhost sshd: session closed for user root
+2025-05-25T10:37:23.106877+00:00 localhost (sd-pam): session closed for user root
+2025-05-25T10:40:46.946189+00:00 localhost sshd: session closed for user root
+2025-05-25T10:40:57.116888+00:00 localhost (sd-pam): session closed for user root
+2025-05-25T10:41:13.581471+00:00 localhost sshd: session closed for user root
+2025-05-25T10:45:01.510962+00:00 localhost CRON: session closed for user root
+2025-05-25T09:39:59.785953+00:00 localhost su: session closed for user user1
+2025-05-25T09:46:29.361310+00:00 localhost su: session closed for user user1
+2025-05-25T09:50:10.244123+00:00 localhost su: session closed for user user1
+2025-05-25T09:52:10.450282+00:00 localhost su: session closed for user user1
+2025-05-25T09:40:09.966244+00:00 localhost su: session closed for user user2
+2025-05-25T09:47:03.599481+00:00 localhost su: session closed for user user2
+2025-05-25T10:01:38.673486+00:00 localhost su: session closed for user user2
+2025-05-25T09:36:18.532644+00:00 localhost su: session closed for user user3
+2025-05-25T09:36:51.294549+00:00 localhost su: session closed for user user3
+2025-05-25T09:39:00.554283+00:00 localhost su: session closed for user user3
+2025-05-25T09:40:14.788720+00:00 localhost su: session closed for user user3
+2025-05-25T09:40:58.469717+00:00 localhost su: session closed for user user3
+2025-05-25T09:48:38.530535+00:00 localhost su: session closed for user user3
+2025-05-25T00:05:01.724121+00:00 localhost CRON: session opened for user root(uid=0) by
+2025-05-25T00:15:01.728671+00:00 localhost CRON: session opened for user root(uid=0) by
+2025-05-25T00:17:01.732154+00:00 localhost CRON: session opened for user root(uid=0) by
+2025-05-25T00:25:01.736109+00:00 localhost CRON: session opened for user root(uid=0) by
+2025-05-25T00:35:01.741132+00:00 localhost CRON: session opened for user root(uid=0) by
+2025-05-25T00:45:01.745782+00:00 localhost CRON: session opened for user root(uid=0) by
+2025-05-25T00:55:01.750585+00:00 localhost CRON: session opened for user root(uid=0) by
+2025-05-25T01:05:01.755046+00:00 localhost CRON: session opened for user root(uid=0) by
+2025-05-25T01:15:01.759394+00:00 localhost CRON: session opened for user root(uid=0) by
+2025-05-25T01:17:01.763036+00:00 localhost CRON: session opened for user root(uid=0) by
+2025-05-25T01:25:01.767227+00:00 localhost CRON: session opened for user root(uid=0) by
+2025-05-25T01:35:01.772173+00:00 localhost CRON: session opened for user root(uid=0) by
+2025-05-25T01:45:01.776585+00:00 localhost CRON: session opened for user root(uid=0) by
+2025-05-25T01:55:01.781685+00:00 localhost CRON: session opened for user root(uid=0) by
+2025-05-25T02:05:01.786321+00:00 localhost CRON: session opened for user root(uid=0) by
+2025-05-25T02:15:01.790742+00:00 localhost CRON: session opened for user root(uid=0) by
+2025-05-25T02:17:01.794192+00:00 localhost CRON: session opened for user root(uid=0) by
+2025-05-25T02:25:01.798702+00:00 localhost CRON: session opened for user root(uid=0) by
+2025-05-25T02:35:01.803768+00:00 localhost CRON: session opened for user root(uid=0) by
+2025-05-25T02:45:01.808837+00:00 localhost CRON: session opened for user root(uid=0) by
+2025-05-25T02:55:01.813990+00:00 localhost CRON: session opened for user root(uid=0) by
+2025-05-25T03:05:01.818789+00:00 localhost CRON: session opened for user root(uid=0) by
+2025-05-25T03:10:01.823416+00:00 localhost CRON: session opened for user root(uid=0) by
+2025-05-25T03:15:01.826403+00:00 localhost CRON: session opened for user root(uid=0) by
+2025-05-25T03:17:01.829618+00:00 localhost CRON: session opened for user root(uid=0) by
+2025-05-25T03:25:01.833738+00:00 localhost CRON: session opened for user root(uid=0) by
+2025-05-25T03:30:01.837628+00:00 localhost CRON: session opened for user root(uid=0) by
+2025-05-25T03:35:01.840997+00:00 localhost CRON: session opened for user root(uid=0) by
+2025-05-25T03:45:01.845389+00:00 localhost CRON: session opened for user root(uid=0) by
+2025-05-25T03:55:01.849787+00:00 localhost CRON: session opened for user root(uid=0) by
+2025-05-25T04:05:01.854133+00:00 localhost CRON: session opened for user root(uid=0) by
+2025-05-25T04:15:01.858714+00:00 localhost CRON: session opened for user root(uid=0) by
+2025-05-25T04:17:01.862381+00:00 localhost CRON: session opened for user root(uid=0) by
+2025-05-25T04:25:01.866458+00:00 localhost CRON: session opened for user root(uid=0) by
+2025-05-25T04:35:01.870917+00:00 localhost CRON: session opened for user root(uid=0) by
+2025-05-25T04:45:01.875578+00:00 localhost CRON: session opened for user root(uid=0) by
+2025-05-25T04:55:01.880341+00:00 localhost CRON: session opened for user root(uid=0) by
+2025-05-25T05:05:01.884593+00:00 localhost CRON: session opened for user root(uid=0) by
+2025-05-25T05:15:01.888689+00:00 localhost CRON: session opened for user root(uid=0) by
+2025-05-25T05:17:01.892514+00:00 localhost CRON: session opened for user root(uid=0) by
+2025-05-25T05:25:01.897615+00:00 localhost CRON: session opened for user root(uid=0) by
+2025-05-25T05:35:01.902850+00:00 localhost CRON: session opened for user root(uid=0) by
+2025-05-25T05:45:01.907590+00:00 localhost CRON: session opened for user root(uid=0) by
+2025-05-25T05:55:01.912761+00:00 localhost CRON: session opened for user root(uid=0) by
+2025-05-25T06:05:01.917891+00:00 localhost CRON: session opened for user root(uid=0) by
+2025-05-25T06:15:01.922395+00:00 localhost CRON: session opened for user root(uid=0) by
+2025-05-25T06:17:01.926009+00:00 localhost CRON: session opened for user root(uid=0) by
+2025-05-25T06:25:01.930688+00:00 localhost CRON: session opened for user root(uid=0) by
+2025-05-25T06:25:03.516247+00:00 localhost CRON: session opened for user root(uid=0) by
+2025-05-25T06:35:01.938455+00:00 localhost CRON: session opened for user root(uid=0) by
+2025-05-25T06:45:01.943018+00:00 localhost CRON: session opened for user root(uid=0) by
+2025-05-25T06:47:01.946932+00:00 localhost CRON: session opened for user root(uid=0) by
+2025-05-25T06:55:01.952005+00:00 localhost CRON: session opened for user root(uid=0) by
+2025-05-25T07:05:01.957089+00:00 localhost CRON: session opened for user root(uid=0) by
+2025-05-25T07:15:01.962158+00:00 localhost CRON: session opened for user root(uid=0) by
+2025-05-25T07:17:01.966169+00:00 localhost CRON: session opened for user root(uid=0) by
+2025-05-25T07:24:51.385293+00:00 localhost sshd: session opened for user root(uid=0) by
+2025-05-25T07:24:51.460305+00:00 localhost (systemd): session opened for user root(uid=0) by
+2025-05-25T07:25:01.971000+00:00 localhost CRON: session opened for user root(uid=0) by
+2025-05-25T07:35:01.975539+00:00 localhost CRON: session opened for user root(uid=0) by
+2025-05-25T07:37:12.214586+00:00 localhost sshd: session opened for user root(uid=0) by
+2025-05-25T07:37:12.230726+00:00 localhost (systemd): session opened for user root(uid=0) by
+2025-05-25T07:45:01.980283+00:00 localhost CRON: session opened for user root(uid=0) by
+2025-05-25T07:48:06.273477+00:00 localhost sshd: session opened for user root(uid=0) by
+2025-05-25T07:48:06.289494+00:00 localhost (systemd): session opened for user root(uid=0) by
+2025-05-25T07:55:01.984725+00:00 localhost CRON: session opened for user root(uid=0) by
+2025-05-25T08:05:01.989335+00:00 localhost CRON: session opened for user root(uid=0) by
+2025-05-25T08:15:01.993710+00:00 localhost CRON: session opened for user root(uid=0) by
+2025-05-25T08:17:01.997331+00:00 localhost CRON: session opened for user root(uid=0) by
+2025-05-25T08:25:02.001616+00:00 localhost CRON: session opened for user root(uid=0) by
+2025-05-25T08:35:01.007127+00:00 localhost CRON: session opened for user root(uid=0) by
+2025-05-25T08:45:01.012019+00:00 localhost CRON: session opened for user root(uid=0) by
+2025-05-25T08:55:01.016639+00:00 localhost CRON: session opened for user root(uid=0) by
+2025-05-25T09:05:01.021955+00:00 localhost CRON: session opened for user root(uid=0) by
+2025-05-25T09:12:29.517278+00:00 localhost sshd: session opened for user root(uid=0) by
+2025-05-25T09:12:29.539574+00:00 localhost (systemd): session opened for user root(uid=0) by
+2025-05-25T09:15:01.026687+00:00 localhost CRON: session opened for user root(uid=0) by
+2025-05-25T09:16:20.797550+00:00 localhost sshd: session opened for user root(uid=0) by
+2025-05-25T09:16:20.820196+00:00 localhost (systemd): session opened for user root(uid=0) by
+2025-05-25T09:17:01.030586+00:00 localhost CRON: session opened for user root(uid=0) by
+2025-05-25T09:25:01.162648+00:00 localhost CRON: session opened for user root(uid=0) by
+2025-05-25T09:35:01.167779+00:00 localhost CRON: session opened for user root(uid=0) by
+2025-05-25T09:45:01.172309+00:00 localhost CRON: session opened for user root(uid=0) by
+2025-05-25T09:50:20.388016+00:00 localhost sudo: session opened for user root(uid=0) by
+2025-05-25T09:51:26.464666+00:00 localhost sudo: session opened for user root(uid=0) by
+2025-05-25T09:52:27.110410+00:00 localhost sudo: session opened for user root(uid=0) by
+2025-05-25T09:53:07.983359+00:00 localhost sudo: session opened for user root(uid=0) by
+2025-05-25T09:54:56.161602+00:00 localhost sudo: session opened for user root(uid=0) by
+2025-05-25T09:55:01.177551+00:00 localhost CRON: session opened for user root(uid=0) by
+2025-05-25T10:05:01.221983+00:00 localhost CRON: session opened for user root(uid=0) by
+2025-05-25T10:15:01.226731+00:00 localhost CRON: session opened for user root(uid=0) by
+2025-05-25T10:17:01.230344+00:00 localhost CRON: session opened for user root(uid=0) by
+2025-05-25T10:25:01.234724+00:00 localhost CRON: session opened for user root(uid=0) by
+2025-05-25T10:35:01.239474+00:00 localhost CRON: session opened for user root(uid=0) by
+2025-05-25T10:40:46.534088+00:00 localhost sshd: session opened for user root(uid=0) by
+2025-05-25T10:40:46.559205+00:00 localhost (systemd): session opened for user root(uid=0) by
+2025-05-25T10:41:13.409489+00:00 localhost sshd: session opened for user root(uid=0) by
+2025-05-25T10:41:13.430271+00:00 localhost (systemd): session opened for user root(uid=0) by
+2025-05-25T10:41:42.715792+00:00 localhost sshd: session opened for user root(uid=0) by
+2025-05-25T10:41:42.737867+00:00 localhost (systemd): session opened for user root(uid=0) by
+2025-05-25T10:45:01.243824+00:00 localhost CRON: session opened for user root(uid=0) by
+2025-05-25T09:39:33.794632+00:00 localhost su: session opened for user user1(uid=1001) by
+2025-05-25T09:45:56.238112+00:00 localhost su: session opened for user user1(uid=1001) by
+2025-05-25T09:49:24.335153+00:00 localhost su: session opened for user user1(uid=1001) by
+2025-05-25T09:51:20.163878+00:00 localhost su: session opened for user user1(uid=1001) by
+2025-05-25T09:40:04.162341+00:00 localhost su: session opened for user user2(uid=1002) by
+2025-05-25T09:46:32.456917+00:00 localhost su: session opened for user user2(uid=1002) by
+2025-05-25T09:55:11.009119+00:00 localhost su: session opened for user user2(uid=1002) by
+2025-05-25T09:36:18.530979+00:00 localhost su: session opened for user user3(uid=1003) by
+2025-05-25T09:36:34.968407+00:00 localhost su: session opened for user user3(uid=1003) by
+2025-05-25T09:36:51.294513+00:00 localhost su: session opened for user user3(uid=1003) by
+2025-05-25T09:40:14.787124+00:00 localhost su: session opened for user user3(uid=1003) by
+2025-05-25T09:40:27.984731+00:00 localhost su: session opened for user user3(uid=1003) by
+2025-05-25T09:47:18.920882+00:00 localhost su: session opened for user user3(uid=1003) by
+2025-05-25T09:20:27.464414+00:00 localhost userdel: shadow group 'user1' owned by 'user1'
+2025-05-25T09:26:03.538479+00:00 localhost userdel: shadow group 'user1' owned by 'user1'
+2025-05-25T09:20:45.624547+00:00 localhost userdel: shadow group 'user2' owned by 'user2'
+2025-05-25T09:20:58.089606+00:00 localhost userdel: shadow group 'user3' owned by 'user3'
+2025-05-25T09:50:20.387609+00:00 localhost sudo: : TTY=pts/0 ; PWD=/root ; USER=root
+2025-05-25T09:51:26.142941+00:00 localhost sudo: : TTY=pts/0 ; PWD=/root ; USER=root
+2025-05-25T09:52:27.110047+00:00 localhost sudo: : TTY=pts/0 ; PWD=/root ; USER=root
+2025-05-25T09:53:07.983085+00:00 localhost sudo: : TTY=pts/0 ; PWD=/root ; USER=root
+2025-05-25T09:54:56.161343+00:00 localhost sudo: : TTY=pts/0 ; PWD=/root ; USER=root
+2025-05-25T09:20:27.463966+00:00 localhost userdel: 'user1' from group 'group1'  
+2025-05-25T09:20:27.464440+00:00 localhost userdel: 'user1' from shadow group 'group1' 
+2025-05-25T09:39:33.794272+00:00 localhost su: user1) root on pts/0  
+2025-05-25T09:45:56.237715+00:00 localhost su: user1) root on pts/0  
+2025-05-25T09:49:24.334630+00:00 localhost su: user1) root on pts/0  
+2025-05-25T09:51:20.163440+00:00 localhost su: user1) root on pts/0  
+2025-05-25T09:39:15.960718+00:00 localhost usermod: 'user1' to group 'group1'  
+2025-05-25T09:39:15.960819+00:00 localhost usermod: 'user1' to shadow group 'group1' 
+2025-05-25T09:20:45.624202+00:00 localhost userdel: 'user2' from group 'group1'  
+2025-05-25T09:20:45.624160+00:00 localhost userdel: 'user2' from group 'users'  
+2025-05-25T09:20:45.624585+00:00 localhost userdel: 'user2' from shadow group 'group1' 
+2025-05-25T09:20:45.624566+00:00 localhost userdel: 'user2' from shadow group 'users' 
+2025-05-25T09:40:04.161274+00:00 localhost su: user2) root on pts/0  
+2025-05-25T09:46:32.456513+00:00 localhost su: user2) root on pts/0  
+2025-05-25T09:55:11.008693+00:00 localhost su: user2) root on pts/0  
+2025-05-25T09:39:19.593355+00:00 localhost usermod: 'user2' to group 'group1'  
+2025-05-25T09:39:19.593454+00:00 localhost usermod: 'user2' to shadow group 'group1' 
+2025-05-25T09:20:58.089195+00:00 localhost userdel: 'user3' from group 'group1'  
+2025-05-25T09:20:58.089158+00:00 localhost userdel: 'user3' from group 'users'  
+2025-05-25T09:20:58.089667+00:00 localhost userdel: 'user3' from shadow group 'group1' 
+2025-05-25T09:20:58.089630+00:00 localhost userdel: 'user3' from shadow group 'users' 
+2025-05-25T09:36:18.530622+00:00 localhost su: user3) root on pts/0  
+2025-05-25T09:36:34.967933+00:00 localhost su: user3) root on pts/0  
+2025-05-25T09:40:14.786765+00:00 localhost su: user3) root on pts/0  
+2025-05-25T09:40:27.984294+00:00 localhost su: user3) root on pts/0  
+2025-05-25T09:47:18.920471+00:00 localhost su: user3) root on pts/0  
+2025-05-25T09:39:21.786746+00:00 localhost usermod: 'user3' to group 'group1'  
+2025-05-25T09:39:21.786845+00:00 localhost usermod: 'user3' to shadow group 'group1' 
+2025-05-25T09:36:51.283814+00:00 localhost su: user3) user3 on pts/0  
+2025-05-25T09:24:53.805481+00:00 localhost useradd: user: name=user1, UID=1001, GID=1001, home=/home/user1, shell=/bin/bash,
+2025-05-25T09:30:04.314429+00:00 localhost useradd: user: name=user1, UID=1001, GID=1001, home=/home/user1, shell=/bin/bash,
+2025-05-25T09:33:04.491636+00:00 localhost useradd: user: name=user2, UID=1002, GID=1002, home=/home/user2, shell=/bin/bash,
+2025-05-25T09:33:31.522806+00:00 localhost useradd: user: name=user3, UID=1003, GID=1003, home=/home/user3, shell=/bin/bash,
+2025-05-25T09:20:27.463750+00:00 localhost userdel: user 'user1'    
+2025-05-25T09:26:03.538120+00:00 localhost userdel: user 'user1'    
+2025-05-25T09:20:45.624001+00:00 localhost userdel: user 'user2'    
+2025-05-25T09:33:11.237748+00:00 localhost chfn: user 'user2' information   
+2025-05-25T09:20:58.089024+00:00 localhost userdel: user 'user3'    
+2025-05-25T09:33:39.293301+00:00 localhost chfn: user 'user3' information   
+2025-05-25T09:35:48.650166+00:00 localhost usermod: user 'user3' shell from '/bin/bash' to
+^[[?2004h^[]0;root@eltex-practice2-pg1-v19: ~^Groot@eltex-practice2-pg1-v19:~# ^[[7mfind /var/log -name "auth.log" -exec awk '{print $5}' {} \; | sed -E 's/\[[0-9]+\]/^[[27m^[[7m/^[[27m^[[7mg' | sort -k4 | uniq -c | sort -nr^[[27m^[[A^H^H^Hfind /var/log -name "auth.log" -exec awk '>
+^[[?2004l^M    236 session
+     13 password
+      7 user
+      7 from
+      7 disconnect
+      6 'user3'
+      6 user3)
+      6 'user2'
+      5 :
+      4 'user1'
+      4 user1)
+      4 user:
+      4 shadow
+      4 group:
+      4 group
+      4 closed
+      4 added
+      3 user2)
+      3 publickey
+      2 of
+      2 adding
+      1 listening
+      1 authentication
+      1 8298
+      1 8296
+      1 8284
+      1 8281
+      1 8270
+      1 8267
+      1 8263
+      1 1
+^[[?2004h^[]0;root@eltex-practice2-pg1-v19: ~^Groot@eltex-practice2-pg1-v19:~# ^[[7mawk -F: '$7 ~ "/usr/sbin/nologin$|/usr/bin/nologin$" {print $3, $1}' /etc/passwd | ^[[27m^[[7ms^[[27m^[[7mort -nr | while read uid user; do^[[27m^[[A^H^Hawk -F: '$7 ~ "/usr/sbin/nologin$|/usr/bin/no>
+^[[?2004l^M^[[?2004h> ^C^[[?2004l^M^[[?2004h^[[?2004l^M
+^[[?2004h^[]0;root@eltex-practice2-pg1-v19: ~^Groot@eltex-practice2-pg1-v19:~# ^[[7mawk -F: '$7 ~ "/usr/sbin/nologin$|/usr/bin/nologin$" {print $3, $1}' /etc/passwd | ^[[27m^[[7ms^[[27m^[[7mort -nr | while read uid user; do^@^[[27m
+^M^[[7m    groups=$(grep -E "(:|,)$user(,|$)" /etc/group | cut -d: -f1 | paste -sd ",")^[[27m
+^M^[[7m    echo "$uid, $user, $groups"^[[27m
+^M^[[7mdone^[[27m^[[A^[[A^[[A^[[A^M^[]0;root@eltex-practice2-pg1-v19: ~^Groot@eltex-practice2-pg1-v19:~# awk -F: '$7 ~ "/usr/sbin/nologin$|/usr/bin/nologin$" {print $3, $1}' /etc/passwd | sort -nr | while read uid user; do
+^M    groups=$(grep -E "(:|,)$user(,|$)" /etc/group | cut -d: -f1 | paste -sd ",")
+^M    echo "$uid, $user, $groups"
+^Mdone
+^[[?2004l^M65534, nobody, 
+1003, user3, users,group1
+998, systemd-network, 
+997, systemd-timesync, 
+992, systemd-resolve, 
+991, polkitd, 
+989, fwupd-refresh, 
+109, sshd, 
+108, usbmux, 
+107, landscape, 
+105, tcpdump, 
+104, uuidd, 
+103, syslog, adm
+101, messagebus, 
+42, _apt, 
+39, irc, 
+38, list, 
+34, backup, 
+33, www-data, 
+13, proxy, 
+10, uucp, 
+9, news, 
+8, mail, 
+7, lp, 
+6, man, 
+5, games, 
+3, sys, 
+2, bin, 
+1, daemon, 
+^[[?2004h^[]0;root@eltex-practice2-pg1-v19: ~^Groot@eltex-practice2-pg1-v19:~# ^[[7mdmesg | grep -i "kernel"^[[27m^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^Hdmesg | grep -i "kernel"
+^[[?2004l^M[    0.000000] ^[[01;31m^[[KKERNEL^[[m^[[K supported cpus:
+[    0.061675] Booting paravirtualized ^[[01;31m^[[Kkernel^[[m^[[K on KVM
+[    0.061982] ^[[01;31m^[[KKernel^[[m^[[K command line: BOOT_IMAGE=/vmlinuz-6.8.0-57-generic root=/dev/mapper/ubuntu--vg-ubuntu--lv ro
+[    0.062025] Unknown ^[[01;31m^[[Kkernel^[[m^[[K command line parameters "BOOT_IMAGE=/vmlinuz-6.8.0-57-generic", will be passed to user space.
+[    0.129923] Memory: 3933484K/4193760K available (22528K ^[[01;31m^[[Kkernel^[[m^[[K code, 4444K rwdata, 14344K rodata, 4988K init, 4716K bss, 260016K reserved, 0K cma-reserved)
+[    0.312583] DMA: preallocated 512 KiB GFP_^[[01;31m^[[KKERNEL^[[m^[[K pool for atomic allocations
+[    0.312614] DMA: preallocated 512 KiB GFP_^[[01;31m^[[KKERNEL^[[m^[[K|GFP_DMA pool for atomic allocations
+[    0.312647] DMA: preallocated 512 KiB GFP_^[[01;31m^[[KKERNEL^[[m^[[K|GFP_DMA32 pool for atomic allocations
+[    0.642329] Loaded X.509 cert 'Build time autogenerated ^[[01;31m^[[Kkernel^[[m^[[K key: 314db5b871207b67c6af73164cb9641e90a23972'
+[    0.650159] Loaded X.509 cert 'Canonical Ltd. ^[[01;31m^[[KKernel^[[m^[[K Module Signing: 88f752e560a1e0737e31163a466ad7b70a850c19'
+[    1.817023] Loaded X.509 cert 'Build time autogenerated ^[[01;31m^[[Kkernel^[[m^[[K key: 314db5b871207b67c6af73164cb9641e90a23972'
+[    1.842214] Freeing unused ^[[01;31m^[[Kkernel^[[m^[[K image (initmem) memory: 4988K
+[    1.843103] Write protecting the ^[[01;31m^[[Kkernel^[[m^[[K read-only data: 38912k
+[    1.844495] Freeing unused ^[[01;31m^[[Kkernel^[[m^[[K image (rodata/data gap) memory: 2040K
+[   60.453177] systemd[1]: Listening on systemd-udevd-^[[01;31m^[[Kkernel^[[m^[[K.socket - udev ^[[01;31m^[[KKernel^[[m^[[K Socket.
+[   60.469014] systemd[1]: Mounting sys-^[[01;31m^[[Kkernel^[[m^[[K-debug.mount - ^[[01;31m^[[KKernel^[[m^[[K Debug File System...
+[   60.474780] systemd[1]: Mounting sys-^[[01;31m^[[Kkernel^[[m^[[K-tracing.mount - ^[[01;31m^[[KKernel^[[m^[[K Trace File System...
+[   60.535303] systemd[1]: Starting modprobe@configfs.service - Load ^[[01;31m^[[KKernel^[[m^[[K Module configfs...
+[   60.539905] systemd[1]: Starting modprobe@dm_mod.service - Load ^[[01;31m^[[KKernel^[[m^[[K Module dm_mod...
+[   60.548482] systemd[1]: Starting modprobe@drm.service - Load ^[[01;31m^[[KKernel^[[m^[[K Module drm...
+[   60.553397] systemd[1]: Starting modprobe@efi_pstore.service - Load ^[[01;31m^[[KKernel^[[m^[[K Module efi_pstore...
+[   60.562290] systemd[1]: Starting modprobe@fuse.service - Load ^[[01;31m^[[KKernel^[[m^[[K Module fuse...
+[   60.568805] systemd[1]: Starting modprobe@loop.service - Load ^[[01;31m^[[KKernel^[[m^[[K Module loop...
+[   60.635212] systemd[1]: Starting systemd-modules-load.service - Load ^[[01;31m^[[KKernel^[[m^[[K Modules...
+[   60.651096] systemd[1]: Starting systemd-remount-fs.service - Remount Root and ^[[01;31m^[[KKernel^[[m^[[K File Systems...
+[   60.671601] systemd[1]: Mounted sys-^[[01;31m^[[Kkernel^[[m^[[K-debug.mount - ^[[01;31m^[[KKernel^[[m^[[K Debug File System.
+[   60.672856] systemd[1]: Mounted sys-^[[01;31m^[[Kkernel^[[m^[[K-tracing.mount - ^[[01;31m^[[KKernel^[[m^[[K Trace File System.
+[   60.676499] systemd[1]: Finished modprobe@configfs.service - Load ^[[01;31m^[[KKernel^[[m^[[K Module configfs.
+[   60.678537] systemd[1]: Finished modprobe@dm_mod.service - Load ^[[01;31m^[[KKernel^[[m^[[K Module dm_mod.
+[   60.680663] systemd[1]: Finished modprobe@drm.service - Load ^[[01;31m^[[KKernel^[[m^[[K Module drm.
+[   60.683147] systemd[1]: Finished modprobe@fuse.service - Load ^[[01;31m^[[KKernel^[[m^[[K Module fuse.
+[   60.685158] systemd[1]: Finished modprobe@loop.service - Load ^[[01;31m^[[KKernel^[[m^[[K Module loop.
+[   60.691118] systemd[1]: Mounting sys-^[[01;31m^[[Kkernel^[[m^[[K-config.mount - ^[[01;31m^[[KKernel^[[m^[[K Configuration File System...
+[   60.711591] systemd[1]: Finished modprobe@efi_pstore.service - Load ^[[01;31m^[[KKernel^[[m^[[K Module efi_pstore.
+[   60.715647] systemd[1]: Mounted sys-^[[01;31m^[[Kkernel^[[m^[[K-config.mount - ^[[01;31m^[[KKernel^[[m^[[K Configuration File System.
+[1483137.705233] "echo 0 > /proc/sys/^[[01;31m^[[Kkernel^[[m^[[K/hung_task_timeout_secs" disables this message.
+[1483137.705778] "echo 0 > /proc/sys/^[[01;31m^[[Kkernel^[[m^[[K/hung_task_timeout_secs" disables this message.
+[1483260.583270] "echo 0 > /proc/sys/^[[01;31m^[[Kkernel^[[m^[[K/hung_task_timeout_secs" disables this message.
+[1483260.583779] "echo 0 > /proc/sys/^[[01;31m^[[Kkernel^[[m^[[K/hung_task_timeout_secs" disables this message.
+[1483260.584240] "echo 0 > /proc/sys/^[[01;31m^[[Kkernel^[[m^[[K/hung_task_timeout_secs" disables this message.
+[1483260.584639] "echo 0 > /proc/sys/^[[01;31m^[[Kkernel^[[m^[[K/hung_task_timeout_secs" disables this message.
+[1483260.585038] "echo 0 > /proc/sys/^[[01;31m^[[Kkernel^[[m^[[K/hung_task_timeout_secs" disables this message.
+[1483383.461329] "echo 0 > /proc/sys/^[[01;31m^[[Kkernel^[[m^[[K/hung_task_timeout_secs" disables this message.
+[1483383.461785] "echo 0 > /proc/sys/^[[01;31m^[[Kkernel^[[m^[[K/hung_task_timeout_secs" disables this message.
+[1483383.462301] "echo 0 > /proc/sys/^[[01;31m^[[Kkernel^[[m^[[K/hung_task_timeout_secs" disables this message.
+[1483383.462476] Future hung task reports are suppressed, see sysctl ^[[01;31m^[[Kkernel^[[m^[[K.hung_task_warnings
+^[[?2004h^[]0;root@eltex-practice2-pg1-v19: ~^Groot@eltex-practice2-pg1-v19:~# ^[[7mgrep -c $ /var/log/kern.log^[[27m^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^Hgrep -c $ /var/log/kern.log
+^[[?2004l^M11
+^[[?2004h^[]0;root@eltex-practice2-pg1-v19: ~^Groot@eltex-practice2-pg1-v19:~# ^[[7mawk '/^Start-Date:/ {start=$0} /^End-Date:/ {end=$0} /^Commandline:/ {cmd=$0; print^[[27m^[[7m ^[[27m^[[7mcmd "; " start "; " end}' /var/log/apt/history.log^[[27m^[[A^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H>
+^[[?2004l^MCommandline: /usr/bin/unattended-upgrade; Start-Date: 2025-05-06  06:52:58; 
+Commandline: /usr/bin/unattended-upgrade; Start-Date: 2025-05-06  07:34:56; End-Date: 2025-05-06  07:34:44
+Commandline: /usr/bin/unattended-upgrade; Start-Date: 2025-05-06  07:38:00; End-Date: 2025-05-06  07:37:55
+Commandline: /usr/bin/unattended-upgrade; Start-Date: 2025-05-06  07:39:24; End-Date: 2025-05-06  07:39:18
+Commandline: /usr/bin/unattended-upgrade; Start-Date: 2025-05-06  07:40:55; End-Date: 2025-05-06  07:40:50
+Commandline: /usr/bin/unattended-upgrade; Start-Date: 2025-05-15  06:02:15; End-Date: 2025-05-06  07:41:49
+Commandline: /usr/bin/unattended-upgrade; Start-Date: 2025-05-16  06:42:37; End-Date: 2025-05-15  06:02:44
+Commandline: /usr/bin/unattended-upgrade; Start-Date: 2025-05-16  07:41:52; End-Date: 2025-05-16  07:41:12
+Commandline: /usr/bin/unattended-upgrade; Start-Date: 2025-05-16  07:42:44; End-Date: 2025-05-16  07:42:39
+Commandline: /usr/bin/unattended-upgrade; Start-Date: 2025-05-16  07:43:15; End-Date: 2025-05-16  07:43:10
+Commandline: /usr/bin/unattended-upgrade; Start-Date: 2025-05-16  07:53:58; End-Date: 2025-05-16  07:53:50
+Commandline: /usr/bin/unattended-upgrade; Start-Date: 2025-05-16  07:55:23; End-Date: 2025-05-16  07:55:07
+Commandline: /usr/bin/unattended-upgrade; Start-Date: 2025-05-16  07:57:26; End-Date: 2025-05-16  07:57:18
+Commandline: /usr/bin/unattended-upgrade; Start-Date: 2025-05-23  06:05:14; End-Date: 2025-05-16  07:58:19
+^[[?2004h^[]0;root@eltex-practice2-pg1-v19: ~^Groot@eltex-practice2-pg1-v19:~# exit
+^[[?2004l^Mexit
+
+Script done on 2025-05-25 10:54:19+00:00 [COMMAND_EXIT_CODE="0"]

@@ -1,0 +1,150 @@
+root@eltex-practice2-pg2-v19:~# useradd user1 -m -s /bin/bash -p user1
+root@eltex-practice2-pg2-v19:~# adduser user2
+info: Adding user `user2` ...
+info: Selecting UID/GID from range 1000 to 59999 ...
+info: Adding new group `user2' (1002) ...
+info: Adding new user `user2` (1002) with group `user2' (1002) ...
+info: Creating home directory `/home/user2' ...
+info: Copying files from `/etc/skel' ...
+info: Adding new user `user2' to supplemental / extra groups `users' ...
+info: Adding user `user2' to group `users` ...
+root@eltex-practice2-pg2-v19:~# adduser user3
+info: Adding user `user3` ...
+info: Selecting UID/GID from range 1000 to 59999 ...
+info: Adding new group `user3' (1003) ...
+info: Adding new user `user3` (1003) with group `user3' (1003) ...
+info: Creating home directory `/home/user3' ...
+info: Copying files from `/etc/skel' ...
+info: Adding new user `user3' to supplemental / extra groups `users' ...
+info: Adding user `user3' to group `users` ...
+root@eltex-practice2-pg2-v19:~# usermod -s /usr/sbin/nologin user3
+root@eltex-practice2-pg2-v19:~# su user3
+This account is currently not available.
+root@eltex-practice2-pg2-v19:~# su -s /bin/bash user3
+user3@eltex-practice2-pg2-v19:~# exit
+root@eltex-practice2-pg2-v19:~# addgroup new_group
+info: Selecting GID from range 1000 to 59999 ...
+info: Adding group `new_group' (GID 1004) ...
+root@eltex-practice2-pg2-v19:~# usermod -aG new_group user1
+root@eltex-practice2-pg2-v19:~# usermod -aG new_group user2
+root@eltex-practice2-pg2-v19:~# usermod -aG new_group user3
+root@eltex-practice2-pg2-v19:~# groups user1
+user1 : user1 new_group
+user2 : user2 users new_group
+user3 : user3 users new_group
+root@eltex-practice2-pg2-v19:~# mkdir /opt/share
+root@eltex-practice2-pg2-v19:~# chgrp new_group /opt/share
+root@eltex-practice2-pg2-v19:~# chgrp -R new_group /opt/share
+root@eltex-practice2-pg2-v19:~# find / -group new_group
+/opt/share
+root@eltex-practice2-pg2-v19:~# chmod g+s,g+r,g+w,g+x /opt/share
+root@eltex-practice2-pg2-v19:~# ls -ld /opt/share
+drwxrwsr-t 2 root new_group 4096 May 25 13:58 /opt/share
+#umask 026
+root@eltex-practice2-pg2-v19:~# touch /opt/share/test1.txt
+root@eltex-practice2-pg2-v19:~# ls /opt/share
+test1.txt
+root@eltex-practice2-pg2-v19:~# touch /opt/share/test2.txt
+ls /opt/share
+test1.txt  test2.txt
+root@eltex-practice2-pg2-v19:~# touch /opt/share/test3.txt
+root@eltex-practice2-pg2-v19:~# ls /opt/share
+test1.txt  test2.txt  test3.txt
+root@eltex-practice2-pg2-v19:~# su user1
+user1@eltex-practice2-pg2-v19:~$ rm /opt/share/test2.txt
+user1@eltex-practice2-pg2-v19:~$ ls /opt/share
+test1.txt  test3.txt
+user1@eltex-practice2-pg2-v19:~$ exit
+root@eltex-practice2-pg2-v19:~# su user2
+user2@eltex-practice2-pg2-v19:~$ rm /opt/share/test3.txt
+user2@eltex-practice2-pg2-v19:~$ ls /opt/share
+test1.txt
+user2@eltex-practice2-pg2-v19:~$ exit
+root@eltex-practice2-pg2-v19:~# su -s /bin/bash/user3
+user3@eltex-practice2-pg2-v19:~$ rm /opt/share/test1.txt
+user3@eltex-practice2-pg2-v19:~$ ls /opt/share
+user3@eltex-practice2-pg2-v19:~# exit
+root@eltex-practice2-pg2-v19:~# chmod +t /opt/share
+root@eltex-practice2-pg2-v19:~# ls -la /opt/share
+total 8
+drwxrwsr-t 2 root new_group 4096 May 25 10:56 .
+drwxr-xr-x 3 root root      4096 May 25 10:15 ..
+root@eltex-practice2-pg2-v19:~# su user1
+user1@eltex-practice2-pg2-v19:~$ rm /opt/share/test2.txt
+rm: cannot remove '/opt/share/test2.txt': Operation not permitted
+user1@eltex-practice2-pg2-v19:~$ exit
+root@eltex-practice2-pg2-v19:~# su user2
+user2@eltex-practice2-pg2-v19:~$ rm /opt/share/test3.txt
+rm: cannot remove '/opt/share/test3.txt': Operation not permitted
+user2@eltex-practice2-pg2-v19:~$ exit
+root@eltex-practice2-pg2-v19:~# su -s /bin/bash user3
+user3@eltex-practice2-pg2-v19:~$ rm /opt/share/test1.txt
+rm: cannot remove '/opt/share/test1.txt': Operation not permitted
+user3@eltex-practice2-pg2-v19:~$ exit
+root@eltex-practice2-pg2-v19:~# su user1
+user1@eltex-practice2-pg2-v19:~$ sudo dmesg
+user1@eltex-practice2-pg2-v19:~$ exit
+root@eltex-practice2-pg2-v19:~# touch dmeg_suid.sh
+root@eltex-practice2-pg2-v19:~# echo '#!/bin/bash' >> dmesg_suid.sh
+root@eltex-practice2-pg2-v19:~# echo '/bin/dmesg' >> dmesg_suid.sh
+root@eltex-practice2-pg2-v19:~# chmod +x dmesg_suid.sh
+root@eltex-practice2-pg2-v19:~# chmod u+s /home/user2/dmesg_suid.sh
+root@eltex-practice2-pg2-v19:~# ls -la dmesg_suid.sh
+-rwsr-xr-x 1 root root 23 May 25 14:40 dmesg_suid.sh
+root@eltex-practice2-pg2-v19:~# su user2
+user2@eltex-practice2-pg2-v19:~$ bash dmesg_suid.sh
+dmesg: read kernel buffer failed: Operation not permitted
+user2@eltex-practice2-pg2-v19:~$ exit
+root@eltex-practice2-pg2-v19:~# chage -M 10 user1
+root@eltex-practice2-pg2-v19:~# chage -M 10 user2
+root@eltex-practice2-pg2-v19:~# chage -M 10 user3
+root@eltex-practice2-pg2-v19:~# chage -l user1
+Last password change					: May 25, 2025
+Password expires					: May 23, 2025
+Password inactive					: never
+Account expires						: never
+Minimum number of days between password change		: 0
+Maximum number of days between password change		: 10
+Number of days of warning before password expires	: 7
+root@eltex-practice2-pg2-v19:~# touch /etc/motd
+root@eltex-practice2-pg2-v19:~# echo 'Силантьев Дмитрий' >> /etc/motd
+root@eltex-practice2-pg2-v19:~# cat /etc/motd
+Силантьев Дмитрий
+root@eltex-practice2-pg2-v19:~# rsync -a /etc/ /root/etc_backup/
+root@eltex-practice2-pg2-v19:~# ls -l /root/
+total 4
+drwxr-xr-x 109 root root 4096 May 25 14:57 etc_backup
+root@eltex-practice2-pg2-v19:~# tar -caf /root/etc_backup.tar.gz -C /root/ etc_backup
+root@eltex-practice2-pg2-v19:~# tar -caf /root/etc_backup.tar.bz2 -C /root/ etc_backup
+root@eltex-practice2-pg2-v19:~# tar -cf - -C /root etc_backup | 7z a -si /root/etc_backup.tar.7z
+
+7-Zip 23.01 (x64) : Copyright (c) 1999-2023 Igr Pavlov : 2023-06-20
+ 64-bit locale=C.UTF-8 Threads:2 OPEN_MAX:1024
+
+Creating archive: /root/etc_backup.tar.7z
+
+Add new data to archive: 1 file
+
+
+Files read from disk: 1
+Archive size: 485866 bytes (475 kiB)
+Everything is Ok
+root@eltex-practice2-pg2-v19:~# ls -lh /root/etc_backup.tar.*
+-rw-r--r-- 1 root root 475K May 25 16:41 /root/etc_backup.tar.7z
+-rw-r--r-- 1 root root 547K May 25 16:36 /root/etc_backup.tar.bz2
+-rw-r--r-- 1 root root 581K May 25 16:36 /root/etc_backup.tar.gz
+root@eltex-practice2-pg2-v19:~# echo "Текущая дата: $(date)" >> /etc/motd
+root@eltex-practice2-pg2-v19:~# rsync -a /etc/ /root/etc_backup
+root@eltex-practice2-pg2-v19:~# mkdir etc_motd
+root@eltex-practice2-pg2-v19:~# tar -xf etc_backup.tar.gz -C /root/etc_motd
+root@eltex-practice2-pg2-v19:~# cp /etc/motd ~/etc_motd/etc_backup/
+root@eltex-practice2-pg2-v19:~# em etc_backup.tar.gz
+root@eltex-practice2-pg2-v19:~# tar -caf /rrot/etc_backup.tar.gz -C /root/etc_motd/ etc_backup
+root@eltex-practice2-pg2-v19:~# diff <(tar -tf /root/etc_backup.tar.bz2 | sort) <(find /root/etc_backup -type f | sed 's|/root/||' | sort)
+root@eltex-practice2-pg2-v19:~# mkdir /root/etc_backup_gzip
+root@eltex-practice2-pg2-v19:~# tar -xaf /root/etc_backup.tar.gz -C /roott/etc_backup_gzip
+root@eltex-practice2-pg2-v19:~# mkdir /root/etc_backup_7zip
+root@eltex-practice2-pg2-v19:~# 7z x /root/etc_backup.tar.7z -so | tar -xf - -C /root/etc_backup_7zip/
+root@eltex-practice2-pg2-v19:~# diff /root/etc_backup_gzip/etc_backup/motd /root/etc_backup_7zip/etc_backup/motd
+1a2
+> Текущая дата: Thu May 25 16:43:18 UTC 2025
